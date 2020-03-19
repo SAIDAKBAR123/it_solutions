@@ -1,46 +1,60 @@
 <template>
   <v-app id="inspire">
-     <!-- <v-parallax
-    src="https://cdn2.f-cdn.com/contestentries/1411561/3896505/5bc44e200926f_thumb900.jpg"
-  ></v-parallax> -->
   <!--Toolbar of content-->
-  <tool-bar/>
-    <v-content>
+    <v-content v-resize="onResize">
+      <!-- <div id="_main"></div> -->
+      <v-parallax :height="windowSize.y-windowSize.y/2" src="https://www.pptgrounds.com/wp-content/uploads/2015/02/Orange-Color-PPT-Backgrounds.jpg"></v-parallax>
+        <tool-bar />
       <v-container
-        class="fill-height"
         fluid
       >
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col class="shrink">
-              <h3>jhrldasd</h3>
-          </v-col>
-        </v-row>
+       <router-view></router-view>
       </v-container>
+      <v-footer/>
     </v-content>
-
-    <v-footer app>
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
 import ToolBar from './components/VToolbar/ToolBar'
+import Footer from './components/VFooter/Footer'
 export default {
   components: {
-    ToolBar
+    ToolBar,
+    VFooter: Footer
   },
   props: {
     source: String
   },
   data: () => ({
-    drawer: null
+    drawer: null,
+    windowSize: {
+      x: 0,
+      y: 0
+    }
   }),
+  methods: {
+    onResize () {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+    }
+  },
   created () {
+    this.onResize()
     this.$vuetify.theme.dark = false
   }
 }
 </script>
+<style scoped>
+#_main{
+
+  background: url('https://abconsultech.com/wp-content/uploads/2019/06/IT-Solutions.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #cccccc;
+  height: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
