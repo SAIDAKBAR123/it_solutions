@@ -6,6 +6,9 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import './assets/main.css'
 import './assets/fonts.css'
+import VideoBg from 'vue-videobg'
+
+Vue.component('video-bg', VideoBg)
 Vue.config.productionTip = false
 
 new Vue({

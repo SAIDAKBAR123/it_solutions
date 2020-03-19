@@ -14,7 +14,7 @@
               </v-img>
             </v-col>
             <v-col cols="9">
-              <v-card-title class="nunito fs_28_bold">
+              <v-card-title class="nunito fs_28_bold item-select">
                 {{ item.title }}
               </v-card-title>
               <v-card-text class="text--primary">

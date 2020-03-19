@@ -1,7 +1,7 @@
 <template>
-  <v-container class="my-3">
+  <v-container class="my-5">
     <v-row justify="center" justify-md="center">
-      <h2 class="text-center nunito fs_header">Most Popular</h2>
+      <h2 class=" pt-12 text-center nunito fs_header">Most Popular</h2>
     </v-row>
     <v-row justify="center" no-gutters>
       <v-col v-for="(item, n) in popularPosts" :key="n" cols="4" sm="3" xs="12">

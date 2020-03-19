@@ -1,11 +1,9 @@
 <template>
-  <v-footer
-    padless
-  >
-    <v-card
+  <v-footer color="rgba(235, 237, 247, 0.22)" padless>
+    <!-- <v-card
       text
       tile
-      color="#f3b143"
+      color="#ebedf785"
       class=" dark text-center"
     >
       <v-card-text>
@@ -28,7 +26,56 @@
       <v-card-text class="white--text">
         {{ new Date().getFullYear() }} — <strong>IT SOLUTIONS</strong>
       </v-card-text>
-    </v-card>
+    </v-card> -->
+    <v-container  class="pa-10">
+      <v-row no-gutters align-md="stretch" justify-md="space-between">
+        <v-col cols="5">
+          <v-card color="transparent" flat class="" outlined tile>
+            <v-row justify-md="center">
+              <v-img
+                max-width="300"
+                :src="require('@/assets/images/logo1.png')"
+              ></v-img>
+            </v-row>
+            <v-row class="my-2" justify-md="center">
+              <!-- <v-btn
+                text
+                fab
+                color="red"
+                class="ma-2"
+                v-for="i in icons"
+                :key="i"
+                ><v-icon dark> {{ i }}</v-icon></v-btn
+              > -->
+              <v-avatar class="mx-3" text v-for="i in icons"
+                :key="i"  color="#dae2e4">
+      <v-icon dark color="black">{{i}}</v-icon>
+    </v-avatar>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col cols="4" align-md="stretch">
+          <v-card class="pa-2" flat tile color="transparent">
+          <div class="d-flex align-baseline">
+             <v-icon>mdi-bell-ring-outline</v-icon> <span class="px-2 fs_18">Stay turned with fresh news.</span>
+          </div>
+                 <v-text-field
+                 color="orange lighten-3"
+                 class="mt-3"
+                 clearable
+                 dense
+            label="mail address"
+            single-line
+            outlined
+          ></v-text-field>
+          <v-btn class="d-flex" large outlined text color="orange lighten-3">Send Mail</v-btn>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row justify-md="center" no-gutters>
+          <span class="fs_20 text--secondary"> {{ new Date().getFullYear() }} — <span style="color: #FFCC80">IT Solutions</span>. All rights are reserved</span>
+      </v-row>
+    </v-container>
   </v-footer>
 </template>
 
@@ -36,16 +83,14 @@
 export default {
   data () {
     return {
-      icons: [
-        'mdi-instagram',
-        'mdi-telegram',
-        'mdi-linkedin'
-      ]
+      icons: ['mdi-instagram', 'mdi-telegram', 'mdi-linkedin']
     }
   }
 }
 </script>
 
 <style>
-
+.sda {
+  color: #dae2e4;
+}
 </style>

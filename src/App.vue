@@ -1,15 +1,10 @@
 <template>
   <v-app id="inspire">
   <!--Toolbar of content-->
-    <v-content v-resize="onResize">
+    <v-content >
       <!-- <div id="_main"></div> -->
-      <v-parallax :height="windowSize.y-windowSize.y/2" src="https://www.pptgrounds.com/wp-content/uploads/2015/02/Orange-Color-PPT-Backgrounds.jpg"></v-parallax>
         <tool-bar />
-      <v-container
-        fluid
-      >
        <router-view></router-view>
-      </v-container>
       <v-footer/>
     </v-content>
   </v-app>
@@ -27,24 +22,24 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: null,
-    windowSize: {
-      x: 0,
-      y: 0
-    }
+    drawer: null
   }),
-  methods: {
-    onResize () {
-      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
-    }
-  },
+
   created () {
-    this.onResize()
     this.$vuetify.theme.dark = false
   }
 }
 </script>
 <style scoped>
+.video
+{
+  width: 100%;
+  margin-left: 0%;
+position: absolute;
+   background: rgba(255, 0, 0, 0.829);
+
+}
+
 #_main{
 
   background: url('https://abconsultech.com/wp-content/uploads/2019/06/IT-Solutions.jpg');
