@@ -21,17 +21,54 @@
           </h3>
         </v-col>
       </v-row>
-      <v-row class="my-6" justify-md="center">
-        <v-col cols="3">
+      <v-row class="" justify-md="center">
+         <v-col  cols="4">
           <v-card tile flat color="transparent" class=" text-center">
-            <h2 class="nunito fs_24">Josie</h2>
+          </v-card>
+        </v-col>
+        <v-col  cols="4">
+          <v-card tile flat color="transparent" class=" text-center">
+            <h2 class="nunito fs_18">Josie</h2>
             <span class="grey--text">24th October, 2020</span>
           </v-card>
+        </v-col>
+        <v-col cols="4">
+          <!-- <v-card tile flat color="transparent" class=" d-inline-flex text-center">
+            <div class="d-flex flex-baseline">  <v-badge
+            v-for="i in icons"
+                :key="i"
+        bordered
+        color="orange"
+         content="44"
+        overlap
+      >
+        <v-avatar size="35" class="mx-3" text   color="#dae2e4">
+      <v-icon dark size="25" color="black">{{i.icon}}</v-icon>
+    </v-avatar>
+      </v-badge>
+      </div>
+          </v-card> -->
         </v-col>
       </v-row>
       <v-row justify-md="center" class="mx-10">
         <v-col cols="12">
           <v-card color="transparent" tile flat>
+               <v-card tile flat color="transparent" class=" flex-end d-inline-flex text-center">
+            <div class="d-flex flex-baseline">  <v-badge
+            v-for="i in icons"
+                :key="i"
+        bordered
+        color="#afafaf"
+         content="44"
+         class="mx-3"
+        overlap
+      >
+        <v-avatar size="35" class="mx-1" text   color="#dae2e4">
+      <v-icon dark size="25" color="black">{{i.icon}}</v-icon>
+    </v-avatar>
+      </v-badge>
+      </div>
+          </v-card>
             <v-card-title class=" justify-center">
               <div class="circular--portrait">
                 <img
@@ -80,7 +117,7 @@
         </v-col>
         <v-col  cols="3">
           <v-row>
-           <v-col cols="6" offset-lg="1" offset-sm="0"> <strong class=" text--secondary nunito-sans-default fs_20">Related posts</strong></v-col>
+           <v-col cols="9" offset-lg="1"> <strong class=" text--secondary nunito-sans-default fs_20">Related posts</strong></v-col>
           </v-row>
           <v-row v-for="(item, i) in recentPosts" :key="i">
             <v-col cols="9" offset-md="1">
@@ -113,6 +150,18 @@
 <script>
 export default {
   data: () => ({
+    icons: [{
+      icon: 'mdi-instagram',
+      value: '44'
+    },
+    {
+      icon: 'mdi-telegram',
+      value: '2'
+    },
+    {
+      icon: 'mdi-linkedin',
+      value: '18'
+    }],
     recentPosts: [
       {
         username: 'Jonhas Anotoli',
@@ -181,5 +230,6 @@ export default {
   width: 100%;
   height: auto;
   z-index: 2;
+  color: #afafaf;
 }
 </style>

@@ -37,7 +37,7 @@
                 :src="require('@/assets/images/logo1.png')"
               ></v-img>
             </v-row>
-            <v-row class="my-2" justify-md="center">
+            <v-row   v-if="false" class="my-2" justify-md="center">
               <!-- <v-btn
                 text
                 fab
@@ -47,7 +47,7 @@
                 :key="i"
                 ><v-icon dark> {{ i }}</v-icon></v-btn
               > -->
-              <v-avatar class="mx-3" text v-for="i in icons"
+              <v-avatar  class="mx-3" text v-for="i in icons"
                 :key="i"  color="#dae2e4">
       <v-icon dark color="black">{{i}}</v-icon>
     </v-avatar>
@@ -60,7 +60,6 @@
              <v-icon>mdi-bell-ring-outline</v-icon> <span class="px-2 fs_18">Stay turned with fresh news.</span>
           </div>
                  <v-text-field
-
                  color="orange lighten-3"
                  class="mt-3 text-box"
                  clearable

@@ -1,7 +1,7 @@
 <template>
   <div v-resize="onResize" class="home">
       <v-card color="#ebedf785" tile flat>
-         <v-parallax :height="windowSize.y-windowSize.y/2" src="https://alltips.in/wp-content/uploads/2019/11/08162a40-accounting-aerial-businesswoman-1043506-1200x858.jpg">
+         <v-parallax :height="windowSize.y-windowSize.y/2" src="https://744025.smushcdn.com/1245953/wp-content/uploads/2019/08/photo-1454165205744-3b78555e5572.jpg?lossy=1&strip=1&webp=1">
        </v-parallax>
         <popular-cards />
       </v-card>
@@ -66,8 +66,9 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .asd{
 color: #ebedf785;
 }
+
 </style>
