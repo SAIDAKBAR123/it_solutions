@@ -9,8 +9,9 @@
     <div>
        <v-app-bar color="white" flat >
       <v-app-bar-nav-icon v-if="false"></v-app-bar-nav-icon>
+      <v-btn v-if="isVisiting" @click="window.history.back()" text tile class="text-uppercase text--secondary"><v-icon>mdi-chevron-left</v-icon>Black to blog</v-btn>
       <v-spacer></v-spacer>
-       <v-btn text class="text-uppercase flex-stretch title font-weight-regular mx-2 design-btn" tile v-for="item in toolbar" :key="item.name"><span class="fs_18">{{item.name}}</span></v-btn>
+       <v-btn text class="text-uppercase flex-stretch title font-weight-regular mx-2 design-btn" tile v-for="item in toolbar" :key="item.name"><span class="nunito fs_18">{{item.name}}</span></v-btn>
         <!-- <v-btn-toggle
         class="mx-auto hidden-sm-and-down"
           v-model="special"
@@ -30,6 +31,11 @@
 
 <script>
 export default {
+  computed: {
+    isVisiting () {
+      return this.$store.state.isVisiting
+    }
+  },
   data () {
     return {
       special: '',

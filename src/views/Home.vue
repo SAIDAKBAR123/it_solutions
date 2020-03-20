@@ -25,6 +25,7 @@
           md="4"
         >
           <v-card
+            color="transparent"
             class="pa-2"
             outlined
             tile
