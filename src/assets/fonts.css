@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap&subset=cyrillic,cyrillic-ext');
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap');
 .nunito-sans{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 22px;
     letter-spacing: 1px; 
     line-height: 1.6;
+}
+.nunito-sans-default{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
 }
 .nunito{
     font-family: 'Nunito', sans-serif;

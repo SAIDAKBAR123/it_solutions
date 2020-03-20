@@ -60,8 +60,9 @@
              <v-icon>mdi-bell-ring-outline</v-icon> <span class="px-2 fs_18">Stay turned with fresh news.</span>
           </div>
                  <v-text-field
+
                  color="orange lighten-3"
-                 class="mt-3"
+                 class="mt-3 text-box"
                  clearable
                  dense
             label="mail address"
@@ -92,5 +93,9 @@ export default {
 <style>
 .sda {
   color: #dae2e4;
+}
+.v-text-field--outlined::before{
+border:1px solid red !important;
+color:blue;
 }
 </style>
