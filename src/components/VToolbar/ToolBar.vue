@@ -20,6 +20,7 @@
         tile
         v-for="item in toolbar"
         :key="item.name"
+        :to="item.path"
         ><span class="nunito fs_18">{{ item.name }}</span></v-btn
       >
     </v-app-bar>
@@ -31,7 +32,7 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in toolbar" :key="item.name" link>
+        <v-list-item :to="item.path" v-for="item in toolbar" :key="item.name" link>
           <!-- <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon> -->
@@ -82,7 +83,7 @@ export default {
       toolbar: [
         { name: 'About Us', path: '' },
         { name: 'Blogs', path: '' },
-        { name: 'Porfolio', path: '' },
+        { name: 'Portfolio', path: '/portfolio' },
         { name: 'Contacts', path: '' },
         { name: 'Privacy policy', path: '' }
       ]

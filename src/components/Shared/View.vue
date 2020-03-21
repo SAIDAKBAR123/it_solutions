@@ -243,8 +243,8 @@ export default {
 } */
 .circular--portrait {
   position: absolute;
-  width: 10vh;
-  height: 10vh;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   border-radius: 50%;
   border-style: solid;
