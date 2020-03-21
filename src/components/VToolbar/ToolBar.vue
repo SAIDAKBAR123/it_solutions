@@ -13,6 +13,9 @@
         class="text-uppercase text--secondary"
         ><v-icon>mdi-chevron-left</v-icon>Black to blog</v-btn
       >
+      <v-toolbar-title>
+          <v-img max-width="130" :src="require('../../assets/images/logo1.png')"></v-img>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         text
