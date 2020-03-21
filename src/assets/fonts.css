@@ -21,6 +21,11 @@
     font-weight: 600;
     font-size: 16;
 }
+.nunito-ph{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
 
 .fs_18{
     font-size: 18px;

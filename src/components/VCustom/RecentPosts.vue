@@ -39,7 +39,6 @@
       <v-row>
           <div class="text-center justify-center flex">
     <v-pagination
-      v-model="page"
       :length="15"
       :total-visible="7"
     ></v-pagination>

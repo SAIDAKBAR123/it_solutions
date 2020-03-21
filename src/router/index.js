@@ -13,6 +13,7 @@ const routes = [
   {
     path: '/article/:id',
     name: 'View',
+    props: true,
     component: () => import('../components/Shared/View.vue')
   }
 ]
