@@ -22,34 +22,10 @@ export default {
     source: String
   },
   data: () => ({
+    dark: false,
     drawer: null
-  }),
-
-  created () {
-    this.$vuetify.theme.dark = false
-  }
+  })
 }
 </script>
 <style scoped>
-.video
-{
-  width: 100%;
-  margin-left: 0%;
-position: absolute;
-   background: rgba(255, 0, 0, 0.829);
-
-}
-
-#_main{
-
-  background: url('https://abconsultech.com/wp-content/uploads/2019/06/IT-Solutions.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #cccccc;
-  height: 20%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 </style>

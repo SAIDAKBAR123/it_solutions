@@ -1,53 +1,52 @@
 <template>
   <div>
-    <v-container>
       <v-row >
-        <v-col cols="auto">
+        <v-col offset-md="1" cols="auto">
             <h4 class="nunito text-uppercase">Comments</h4>
             <v-divider></v-divider>
         </v-col>
-          <v-col cols="auto" class="justify-flex-end" >
+          <v-col cols="auto" >
            <div class="d-flex align-self-center">
                <v-icon>mdi-eye</v-icon><span class="px-2"> 2 493</span>
            </div>
         </v-col>
-           <v-col cols="12">
-            <v-btn color="primary" class="" dark small><v-icon> mdi-facebook</v-icon> facebook</v-btn>
-             <v-btn color="pink" class="mx-2" dark small><v-icon> mdi-instagram</v-icon> Instagram</v-btn>
+      </v-row>
+        <v-row  justify-md="start">
+           <v-col offset-md="1" cols="5"  md="auto">
+            <v-btn color="primary" class="m-2" dark text small><v-icon> mdi-facebook</v-icon> facebook</v-btn>
+        </v-col>
+        <v-col cols="5" md="auto" >
+          <v-btn color="pink" class="" dark text small><v-icon> mdi-instagram</v-icon> Instagram</v-btn>
         </v-col>
       </v-row>
       <!--Comments list-->
-      <v-row>
-            <v-col cols="12">
-                <!-- <v-sheet  v-for="(item,i) in comments" :key="i" color="yellow lighten-4 px-5 my-1">
-                    <span class="nunito fs_18">{{item.content}}</span>
-                </v-sheet> -->
+      <v-row justify="center" justify-md="start">
+            <v-col offset-md="1" cols="12" md="8">
                 <transition-group name="list" tag="p">
-                <v-card outlined tile flat v-for="item in comments" :key="item.content" color="orange lighten-5 px-5 my-2 list-item">
-                    <v-card-title class="nunito-sm text--secondary">{{item.name}}</v-card-title>
-                    <v-card-subtitle class="nunito-ph">{{item.content}}</v-card-subtitle>
+                <v-card shaped outlined tile flat v-for="item in comments" :key="item.content" color="orange lighten-5 px-5 mb-2 list-item">
+                    <v-card-title class="nunito-sm black--text">{{item.name}}</v-card-title>
+                    <v-card-subtitle class="nunito-ph black--text">{{item.content}}</v-card-subtitle>
                 </v-card>
                 </transition-group>
             </v-col>
       </v-row>
        <v-row>
-          <v-col  cols="12" align-self="center" >
+          <v-col offset-md="1" cols="12" md="8" align-self="center" >
         <div class="d-flex">
                 <v-avatar size="60"><v-img src="https://pbs.twimg.com/profile_images/1176256865304334336/6hOQS3Ef_400x400.jpg"></v-img></v-avatar>
                 <v-text-field
+                color="orange lighten-2"
                  v-on:keyup.enter="send(sendMsg)"
                 v-model="sendMsg"
                 class="my-2 mx-2"
                 dense
             label="Join the discussion"
             single-line
-            outlined
+
           ></v-text-field>
         </div>
         </v-col>
       </v-row>
-    </v-container>
-
   </div>
 </template>
 <script>
@@ -94,6 +93,7 @@ export default {
     send (val) {
       if (val.length > 0) {
         this.ipName('https://api.ipify.org?format=json', this.sendMsg, this.comments)
+        this.sendMsg = ''
       } else {
         alert('Please , enter something into field')
       }

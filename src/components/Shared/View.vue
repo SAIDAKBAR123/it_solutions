@@ -1,9 +1,9 @@
 <template>
-  <section class="mx-5">
-    <v-container class="my-11">
+  <section class="">
+    <v-container class="">
       <v-row justify-md="center">
         <v-col md="6" cols="12">
-          <v-row justify-md="center">
+          <v-row justify="center" justify-md="center">
             <v-chip
               class="ma-2"
               label
@@ -15,7 +15,7 @@
               <span class="orange--text nunito fs_18"> {{ i }}</span>
             </v-chip>
           </v-row>
-          <h3 class="nunito fs_header_2 text-center md:px-10">
+          <h3 class="nunito fs_header_2 text-center">
             Nana Prince Hotel - The New Jewel in the Crown of Charismatic Crete
           </h3>
         </v-col>
@@ -48,8 +48,8 @@
           </v-card> -->
         </v-col>
       </v-row>
-      <v-row justify-md="center" class="mx-10">
-        <v-col cols="12">
+      <v-row justify="center"  justify-md="center">
+        <v-col cols="12" md="12">
           <v-card color="transparent" tile flat>
             <v-card
               tile
@@ -57,7 +57,6 @@
               color="transparent"
               class=" flex-end d-inline-flex text-center"
             >
-              <div class="d-flex flex-baseline">
                 <v-badge
                   v-for="(i, c) in icons"
                   :key="c"
@@ -71,10 +70,9 @@
                     <v-icon dark size="25" color="black">{{ i.icon }}</v-icon>
                   </v-avatar>
                 </v-badge>
-              </div>
             </v-card>
             <v-card-title class=" justify-center">
-              <div class="circular--portrait">
+              <div class="circular--portrait hidden-sm-and-down">
                 <img
                   class="rd"
                   src="https://pbs.twimg.com/profile_images/1232704400491151363/C5IpS4WF_400x400.jpg"
@@ -109,14 +107,14 @@
         </v-col>
       </v-row>
       <v-row justify-md="center" class="my-10">
-        <v-col offset-md="1" cols="8">
-          <v-card class="pa-2" tile flat>
+        <v-col offset-md="1" cols="12" md="8">
+          <v-card tile flat>
             <v-card-text class="nunito-sans" v-text="essay"> </v-card-text>
             <v-card-text class="nunito-sans" v-text="essay1"> </v-card-text>
             <v-card-text class="nunito-sans" v-text="essay1"> </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="12" md="3">
           <v-row>
             <v-col cols="9" offset-lg="1">
               <strong class=" text--secondary nunito-sans-default fs_20"
@@ -125,7 +123,7 @@
             >
           </v-row>
           <v-row v-for="(item, i) in recentPosts" :key="i">
-            <v-col cols="9" offset-md="1">
+            <v-col cols="12" md="9" lg="9" offset-md="1">
               <v-card color="transparent" tile flat>
                 <v-list class="my-0">
                   <h2 class="nunito fs_22 text-wrap px-3 item-select">
@@ -145,7 +143,7 @@
                   <div>
                     <v-chip
                       color="orange lighten-5"
-                      class="ma-1"
+                      class="ma-1 black--text"
                       v-for="chip in item.chips"
                       :key="chip"
                       >{{ chip }}</v-chip
@@ -159,7 +157,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col offset="1" cols="8">
+        <v-col >
           <v-comments />
         </v-col>
       </v-row>
@@ -245,8 +243,8 @@ export default {
 } */
 .circular--portrait {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 10vh;
+  height: 10vh;
   overflow: hidden;
   border-radius: 50%;
   border-style: solid;

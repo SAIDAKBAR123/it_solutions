@@ -8,13 +8,16 @@
             <v-col cols="12" md="3">
               <v-img
                 class="elevation-4 white--text align-end"
-                :height="(100-20)+'%'"
+                :height="100 - 20 + '%'"
                 :src="item.topicImg"
               >
               </v-img>
             </v-col>
             <v-col cols="12" md="9">
-              <v-card-title class="nunito fs_28_bold item-select">
+              <v-card-title
+                @click="$router.push(item.path)"
+                class="nunito fs_28_bold item-select"
+              >
                 {{ item.title }}
               </v-card-title>
               <v-card-text class="text--primary">
@@ -37,12 +40,9 @@
         </v-card>
       </v-row>
       <v-row>
-          <div class="text-center justify-center flex">
-    <v-pagination
-      :length="15"
-      :total-visible="7"
-    ></v-pagination>
-  </div>
+        <div class="text-center justify-center flex">
+          <v-pagination :length="15" :total-visible="7"></v-pagination>
+        </div>
       </v-row>
     </v-container>
   </div>
@@ -60,7 +60,8 @@ export default {
             'https://santabarbaraca.com/content/uploads/2015/12/santa-barbara-courhouse-update.jpg',
           image: 'https://cxl.com/wp-content/uploads/2016/03/nate_munger.png',
           date: '2nd December, 2019',
-          chips: ['Tapge', 'selon', 'programming', 'C#', 'Cisco']
+          chips: ['Tapge', 'selon', 'programming', 'C#', 'Cisco'],
+          path: 'article/2'
         },
         {
           username: 'Maxmillian Swaitherz',
@@ -69,7 +70,8 @@ export default {
             'https://www.investopedia.com/thmb/xmG9FV9J_3hd_p8TMktrBG34Rvs=/1620x1080/filters:fill(auto,1)/achievement-agreement-arms-business-agreement-business-deal-cheerful-1448611-pxhere.com-afa4d8399a684cfbb5467402c7639663.jpg',
           image: 'https://cxl.com/wp-content/uploads/2016/03/nate_munger.png',
           date: '2th April, 2020',
-          chips: ['Tapge', 'selon', 'programming']
+          chips: ['Tapge', 'selon', 'programming'],
+          path: 'article/2'
         },
         {
           username: 'Abdul Bari',
@@ -78,7 +80,8 @@ export default {
             'https://www.startupshk.com/wp-content/uploads/2014/06/060714_Google_DSC4350.jpg',
           image: 'https://i.udemycdn.com/user/200_H/27878376_ce40_3.jpg',
           date: '24th March, 2019',
-          chips: ['C++', 'Computer Networks', 'Cisco']
+          chips: ['C++', 'Computer Networks', 'Cisco'],
+          path: 'article/2'
         },
         {
           username: 'Abdul Bari',
@@ -87,7 +90,8 @@ export default {
             'https://www.thesun.co.uk/wp-content/uploads/2020/03/NINTCHDBPICT000569046725.jpg',
           image: 'https://i.udemycdn.com/user/200_H/27878376_ce40_3.jpg',
           date: '5th January, 2019',
-          chips: ['C++', 'Computer Networks', 'Cisco']
+          chips: ['C++', 'Computer Networks', 'Cisco'],
+          path: 'article/2'
         }
       ]
     }
