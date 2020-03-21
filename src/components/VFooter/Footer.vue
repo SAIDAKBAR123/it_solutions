@@ -28,14 +28,16 @@
       </v-card-text>
     </v-card> -->
     <v-container  class="pa-10">
-      <v-row no-gutters align-md="stretch" justify-md="space-between">
-        <v-col cols="5">
+      <v-row no-gutters justify-md="space-between" >
+        <v-col xs="12" sm="12" cols="12" md="5">
           <v-card color="transparent" flat class="" outlined tile>
             <v-row justify-md="center">
-              <v-img
+              <v-col>
+                  <v-img
                 max-width="300"
                 :src="require('@/assets/images/logo1.png')"
               ></v-img>
+              </v-col>
             </v-row>
             <v-row   v-if="false" class="my-2" justify-md="center">
               <!-- <v-btn
@@ -54,10 +56,10 @@
             </v-row>
           </v-card>
         </v-col>
-        <v-col cols="4" align-md="stretch">
+        <v-col  xs="12" sm="12" md="5" cols="12">
           <v-card class="pa-2" flat tile color="transparent">
           <div class="d-flex align-baseline">
-             <v-icon>mdi-bell-ring-outline</v-icon> <span class="px-2 fs_18">Stay turned with fresh news.</span>
+             <v-icon>mdi-bell-ring-outline</v-icon> <span class="px-2 nunito fs_18">Stay turned with fresh news.</span>
           </div>
                  <v-text-field
                  color="orange lighten-3"
@@ -72,8 +74,8 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row justify-md="center" no-gutters>
-          <span class="fs_20 text--secondary"> {{ new Date().getFullYear() }} — <span style="color: #FFCC80">IT Solutions</span>. All rights are reserved</span>
+      <v-row justify="center" justify-md="center" no-gutters>
+          <span class="fs_20 text--secondary text-center"> {{ new Date().getFullYear() }} — <span style="color: #FFCC80">IT Solutions</span>. All rights are reserved</span>
       </v-row>
     </v-container>
   </v-footer>

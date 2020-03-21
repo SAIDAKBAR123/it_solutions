@@ -2,7 +2,7 @@
   <section class="mx-5">
     <v-container class="my-11">
       <v-row justify-md="center">
-        <v-col cols="6">
+        <v-col md="6" cols="12">
           <v-row justify-md="center">
             <v-chip
               class="ma-2"
@@ -21,10 +21,10 @@
         </v-col>
       </v-row>
       <v-row class="" justify-md="center">
-        <v-col cols="4">
+        <v-col md="4" cols="12">
           <v-card tile flat color="transparent" class=" text-center"> </v-card>
         </v-col>
-        <v-col cols="4">
+        <v-col md="4" cols="12">
           <v-card tile flat color="transparent" class=" text-center">
             <h2 class="nunito fs_18">Josie</h2>
             <span class="grey--text">24th October, 2020</span>

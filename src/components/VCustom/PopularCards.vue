@@ -4,7 +4,7 @@
       <h2 class=" pt-12 text-center nunito fs_header">Most Popular</h2>
     </v-row>
     <v-row justify="center" no-gutters>
-      <v-col v-for="(item, n) in popularPosts" :key="n" cols="4" sm="3" xs="12">
+      <v-col v-for="(item, n) in popularPosts" :key="n" cols="12" sm="3" md="4">
          <v-hover>
     <template v-slot:default="{ hover }">
         <v-card flat  class="mx-2 my-12" max-width="374">

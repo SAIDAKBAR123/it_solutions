@@ -5,7 +5,7 @@
       <v-row class="my-3" v-for="(item, i) in popularPosts" :key="i" no-gutters>
         <v-card flat max-width="100%">
           <v-row no-gutters>
-            <v-col cols="3">
+            <v-col cols="12" md="3">
               <v-img
                 class="elevation-4 white--text align-end"
                 :height="(100-20)+'%'"
@@ -13,7 +13,7 @@
               >
               </v-img>
             </v-col>
-            <v-col cols="9">
+            <v-col cols="12" md="9">
               <v-card-title class="nunito fs_28_bold item-select">
                 {{ item.title }}
               </v-card-title>
