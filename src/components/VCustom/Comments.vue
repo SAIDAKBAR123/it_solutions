@@ -22,10 +22,12 @@
                 <!-- <v-sheet  v-for="(item,i) in comments" :key="i" color="yellow lighten-4 px-5 my-1">
                     <span class="nunito fs_18">{{item.content}}</span>
                 </v-sheet> -->
-                <v-card shaped tile flat v-for="(item,i) in comments" :key="i" color="orange lighten-5 px-5 my-2">
+                <transition-group name="list" tag="p">
+                <v-card outlined tile flat v-for="item in comments" :key="item.content" color="orange lighten-5 px-5 my-2 list-item">
                     <v-card-title class="nunito-sm text--secondary">{{item.name}}</v-card-title>
                     <v-card-subtitle class="nunito-ph">{{item.content}}</v-card-subtitle>
                 </v-card>
+                </transition-group>
             </v-col>
       </v-row>
        <v-row>
@@ -85,12 +87,13 @@ export default {
                   name: ip,
                   content: val
                 })
+                val = ''
               })
           })
     },
     send (val) {
       if (val.length > 0) {
-        this.ipName('https://api.ipify.org?format=json', val, this.comments)
+        this.ipName('https://api.ipify.org?format=json', this.sendMsg, this.comments)
       } else {
         alert('Please , enter something into field')
       }
@@ -100,4 +103,15 @@ export default {
 
 </script>
 
-<style></style>
+<style scoped>
+.list-item {
+
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
