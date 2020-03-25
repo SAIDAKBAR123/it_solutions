@@ -8,6 +8,10 @@ import './assets/main.css'
 import './assets/fonts.css'
 import VideoBg from 'vue-videobg'
 import { VueTyper } from 'vue-typer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 Vue.component('vue-typer', VueTyper)
 Vue.component('video-bg', VideoBg)
 Vue.config.productionTip = false
