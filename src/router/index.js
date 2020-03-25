@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import About from '../views/AboutUs.vue'
+import goTo from 'vuetify/es5/services/goto'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'About',
+    component: About
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    props: true,
+    component: () => import('../views/Home.vue')
   },
   {
     path: '/article/:id',
@@ -23,16 +30,19 @@ const routes = [
   }
 ]
 
-const behave = (to, from, savedPosition) => {
-  if (savedPosition) {
-    return savedPosition
-  } else {
-    return { x: 0, y: 0 }
-  }
-}
 const router = new VueRouter({
-  routes,
-  behave
+  scrollBehavior: (to, from, savedPosition) => {
+    let scrollTo = 0
+
+    if (to.hash) {
+      scrollTo = to.hash
+    } else if (savedPosition) {
+      scrollTo = savedPosition.y
+    }
+
+    return goTo(scrollTo)
+  },
+  routes
 })
 
 export default router

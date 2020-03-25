@@ -3,9 +3,9 @@
   <!--Toolbar of content-->
     <v-content >
       <!-- <div id="_main"></div> -->
-        <tool-bar />
+        <tool-bar v-if="!isAboutPage" />
        <router-view></router-view>
-      <v-footer/>
+      <v-footer v-if="!isAboutPage"/>
     </v-content>
   </v-app>
 </template>
@@ -24,7 +24,12 @@ export default {
   data: () => ({
     dark: false,
     drawer: null
-  })
+  }),
+  computed: {
+    isAboutPage () {
+      return this.$store.state.isAboutPage
+    }
+  }
 }
 </script>
 <style scoped>

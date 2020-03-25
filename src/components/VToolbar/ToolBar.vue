@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar :dark="isDarkMode ? true : false" flat app>
+    <v-app-bar  :dark="isDarkMode ? true : false">
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = true"
@@ -84,8 +84,8 @@ export default {
       special: '',
       drawer: false,
       toolbar: [
-        { name: 'About Us', path: '' },
-        { name: 'Blogs', path: '' },
+        { name: 'About Us', path: '/' },
+        { name: 'Blogs', path: '/blog' },
         { name: 'Portfolio', path: '/portfolio' },
         { name: 'Contacts', path: '' },
         { name: 'Privacy policy', path: '' }

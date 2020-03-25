@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="rgba(235, 237, 247, 0.22)" padless>
+  <v-footer color="rgba(235, 237, 247, 0.22)" padless >
     <!-- <v-card
       text
       tile

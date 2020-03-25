@@ -22,7 +22,7 @@
             absolute
             color="#FFF59D"
           >
-            <v-btn color="yellow darken-3" flat tile >more info</v-btn>
+            <v-btn color="yellow darken-3" text tile >more info</v-btn>
           </v-overlay>
         </v-fade-transition>
           <v-list class="my-0">

@@ -63,6 +63,10 @@ export default {
   },
   mounted () {
     this.onResize()
+  },
+  created () {
+    console.log('about')
+    this.$store.commit('aboutPage', false)
   }
 }
 </script>
