@@ -7,7 +7,8 @@ import vuetify from './plugins/vuetify'
 import './assets/main.css'
 import './assets/fonts.css'
 import VideoBg from 'vue-videobg'
-
+import { VueTyper } from 'vue-typer'
+Vue.component('vue-typer', VueTyper)
 Vue.component('video-bg', VideoBg)
 Vue.config.productionTip = false
 
