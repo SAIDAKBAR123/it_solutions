@@ -1,38 +1,27 @@
 <template>
   <div class="">
-    <v-card color="transparent" width="100%" >
+    <v-card class="my-10" width="100%" flat>
       <v-row style="height:100%" justify="center" align="center">
         <v-col cols="12" align="center">
           <v-container>
-            <v-row justify="center" align="center">
-                 <v-col class="mx-auto" cols="12" md="6" order="2" order-md="1">
-                       <h3 class="display-2 orange--text border-yellow">About Us</h3>
-                      <p class="fs_header_2 nunito text--black text-center">Future starts from today !</p>
-                <span class="text--black ms">{{
-                  company_des
-                }}</span>
-                </v-col>
-              <v-col cols="12" md="6" order="1" order-md="2" class="mx-auto">
-                  <v-row justify="center">
-                      <v-col cols="12">
-                            <div data-aos="zoom-out-down"   data-aos-delay="10"  data-aos-duration="1000">
-                        <v-img  src="https://mapemond.com/wp-content/uploads/2019/12/team.png"></v-img>
-                            </div>
-                      </v-col>
-                  </v-row>
+            <v-row justify-md="center" align="center">
+              <v-col cols="12" md="7">
+                <v-row>
+                   <span class="text--black ms text-left">{{ company_des}}</span>
+                </v-row>
               </v-col>
+              <v-col cols="5">
+                <v-img src="https://www.pngmart.com/files/9/Marvel-Thanos-PNG-Free-Download.png"></v-img>
+              </v-col>
+
+                 <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">
+                      <h3 class="display-2 orange--text border-yellow">About Us</h3>
+                      <p class="fs_header_2 nunito text--black">Future starts from today !</p>
+                      <span class="text--black ms text-left">{{ company_des}}</span>
+                </v-col> -->
             </v-row>
             <v-row>
             </v-row>
-            <!-- <v-row class="my-4" no-gutters justify="center" align="center">
-              <v-col class="mx-3" v-for="i in 20" :key="i">
-                <v-card  elevation="12">
-                    <v-avatar color="orange" size="62">
-                        <v-icon>{{ }}</v-icon>
-                </v-avatar>
-                </v-card>
-              </v-col>
-            </v-row> -->
           </v-container>
         </v-col>
       </v-row>
@@ -44,8 +33,7 @@
 export default {
   data () {
     return {
-      company_des:
-        'The INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) company was established in the structure of Inha University in Tashkent. A team of professional and creative specialists is ready to fulfill your wishes for the development of unique websites, mobile applications, information systems and resources, as well as IT consulting. We think globally and work with each client, taking into account the characteristics of your company and field of activity.',
+      company_des: 'Компания INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) была основана в структуре Университета Инха в Ташкенте. Команда профессиональных и креативных специалистов готова выполнить ваши пожелания по разработке уникальных сайтов, мобильных приложений, информационных систем и ресурсов, а также по ИТ-консалтингу. Мы мыслим глобально и работаем с каждым клиентом, учитывая особенности вашей компании и сферы деятельности.',
       services: [
         {
           name: 'Mobile development',
@@ -90,8 +78,9 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic,cyrillic-ext,greek-ext");
 .ms {
  font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
+  font-size: 27px;
   line-height: 60px;
+  font-weight: 500;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .7s;

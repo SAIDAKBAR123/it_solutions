@@ -1,9 +1,9 @@
 <template>
-  <v-card dark color="grey darken-4" width="100%">
+  <v-card class="my-10" tile flat width="100%">
     <v-row style="height:100%" justify="center" align="center">
       <v-col cols="12" align="center">
         <h3 class="display-2 pt-10 orange--text border-yellow">Technologies</h3>
-        <span class="white--text fs_header_2 nunito"
+        <span class=" fs_header_2 nunito"
           >Get innovative Apps !</span
         >
       </v-col>
@@ -11,14 +11,14 @@
         <v-row justify="center" no-gutters>
           <v-col cols="auto" v-for="(item, i) in technologies" :key="i">
                   <div data-aos="zoom-out-down"   data-aos-delay="10"  data-aos-duration="1000">
-            <v-card color="transparent" flat class="my-3 mx-6" max-width="260">
-              <v-row justify="center">
-                <v-col cols="auto">
-                  <span class="nunito text-center">{{ item.title }}</span>
-                </v-col>
-              </v-row>
-              <v-img max-width="240" height="240" :src="item.img"> </v-img>
-            </v-card>
+                    <v-card color="transparent" flat class="my-3 mx-6" max-width="260">
+                      <v-row justify="center">
+                        <v-col cols="auto">
+                          <span class="nunito text-center">{{ item.title }}</span>
+                        </v-col>
+                      </v-row>
+                      <v-img max-width="150" height="160" :src="item.img"> </v-img>
+                    </v-card>
                   </div>
           </v-col>
         </v-row>

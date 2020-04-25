@@ -2,7 +2,7 @@
   <div>
     <video-bg
       :sources="[
-        'https://static.videezy.com/system/resources/previews/000/042/970/original/bg0002-5.mp4'
+        'https://static.videezy.com/system/resources/previews/000/018/965/original/blue-plate.mp4'
       ]"
       img="sa"
     >
@@ -16,11 +16,11 @@
             <h3 :class="$vuetify.breakpoint.xs ? 'display-1 py-2 orange--text border-yellow': 'display-4 py-2 orange--text border-yellow'">
               IT SOLUTIONS
             </h3>
-            <vue-typer
+            <!-- <vue-typer
                 v-if="!$vuetify.breakpoint.xs"
               class="px-2 fs_header_2 nunito white"
               text="Support for innovative ideas and technologies...!"
-            ></vue-typer>
+            ></vue-typer> -->
             <v-col class="my-auto">
               <v-btn
                 class="mx-auto"
