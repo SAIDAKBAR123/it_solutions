@@ -1,21 +1,47 @@
 <template>
   <div>
      <v-container>
-       <v-row no-gutters>
-         <v-col  cols="12" md="3" sm="4" v-for="site in projects" :key="site.name" >
-           <v-card class="mx-2 my-2">
-             <v-skeleton-loader
-             v-show="!isAvailable"
-      class="mx-auto"
-      max-width="100%"
-      type="card-heading, image"
-    >  </v-skeleton-loader>
-             <v-card-title v-show="isAvailable">{{site.name}}</v-card-title>
-              <iframe v-show="isAvailable" scrolling="no"  style=" width:100%; height: 400px; overflow: hidden; border: none;" :src="site.path"></iframe>
-           </v-card>
-         </v-col>
+       <v-row>
+                <v-col cols="12" md="6" lg="6" align-self="center" v-for="(item,i) in projects" :key="i">
+                  <v-hover v-slot:default="{ hover }">
+                    <v-card
+                        :href="item.path"
+                        target="_blank"
+                        class="item-select"
+                        tile
+                        :elevation="hover ? 10 : 0"
+                        max-width="100%"
+                    >
+                        <v-img
+                        :aspect-ratio="16/9"
+                        :src="item.image"
+                        height="570px"
+                        >
+                            <div
+                                v-if="hover"
+                                class="d-flex v-card--reveal display-3 white--text"
+                                style="height: 100%;"
+                            >
+                                IT SOLUTIONS
+                            </div>
+                        </v-img>
+                        <v-card-title>
+                              <transition name="slide-fade">
+                            <v-icon class="px-2" color="black" v-if="hover">mdi-arrow-right</v-icon>
+                            <v-icon class="" color="black" v-else>-</v-icon>
+                              </transition>
+                            <span>{{ item.name}}</span>
+                        </v-card-title>
+                    </v-card>
+                  </v-hover>
+              </v-col>
          <v-col cols="4">
          </v-col>
+       </v-row>
+       <v-row justify="center">
+          <v-col cols="auto">
+              <v-btn dark color="yellow darken-3" rounded block x-large class="px-7 py-2 text-capitalize">Load More</v-btn>
+          </v-col>
        </v-row>
      </v-container>
   </div>
@@ -28,29 +54,36 @@ export default {
       isAvailable: false,
       projects: [{
         name: 'Aritech',
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         path: 'http://airtechnic.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'Traffic.uz',
         path: 'http://traffic.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'Yuridik.uz',
         path: 'https://yuridik.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'Lider PRom',
         path: 'http://liderprom.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'Agarcis',
         path: 'https://agarcis.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'YAIT',
         path: 'http://yait.uz/'
       },
       {
+        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
         name: 'Yomi uz',
         path: 'http://yomi.uz/'
       }

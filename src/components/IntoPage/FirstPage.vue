@@ -2,7 +2,7 @@
   <div>
     <video-bg
       :sources="[
-        'https://static.videezy.com/system/resources/previews/000/018/965/original/blue-plate.mp4'
+        'https://static.videezy.com/system/resources/previews/000/012/744/original/Particles_8_-_49s_-_4k_res.mp4'
       ]"
       img="sa"
     >
