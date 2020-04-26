@@ -16,6 +16,9 @@
     <div class="section-4">
         <third-section />
     </div>
+    <div class="section-6">
+        <contacts-section />
+    </div>
   </div>
 </template>
 
@@ -26,6 +29,7 @@ import SecondSection from '../components/IntoPage/AboutContent'
 import PorfolioSection from '../components/IntoPage/PortfolioContent'
 import ThirdSection from '../components/IntoPage/Technologies'
 import ServiceSection from '../components/IntoPage/ServiceContent'
+import ContactsSection from '../components/IntoPage/ContactsContent'
 //  import * as easings from 'vuetify/es5/services/goto/easing-patterns'
 export default {
   components: {
@@ -34,7 +38,8 @@ export default {
     SecondSection,
     ThirdSection,
     PorfolioSection,
-    ServiceSection
+    ServiceSection,
+    ContactsSection
   },
   data () {
     return {
