@@ -1,7 +1,8 @@
 <template>
   <div>
-      <v-container>
-          <v-card tile dark :color="$vuetify.theme.dark ? '':'#F6F6F6'" flat class="px-5 py-5">
+        <v-row justify="center">
+          <v-col md="10">
+              <v-card  tile dark :color="$vuetify.theme.dark ? '':'#F6F6F6'" flat class="">
               <v-row justify-md="center">
                   <v-col md="8">
                       <p class="text-center display-1">Услуги</p>
@@ -16,7 +17,8 @@
               </v-col>
           </v-row>
           </v-card>
-      </v-container>
+          </v-col>
+        </v-row>
   </div>
 </template>
 
