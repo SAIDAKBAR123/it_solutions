@@ -1,5 +1,7 @@
 <template>
-  <v-card class="my-10" tile flat width="100%">
+<v-row justify="center">
+  <v-col cols="12" md="10">
+  <v-card class="my-10" tile flat>
     <v-row style="height:100%" justify="center" align="center">
       <v-col cols="12" align="center">
         <h3 class="display-2 pt-10 orange--text border-yellow">Technologies</h3>
@@ -23,23 +25,11 @@
     </v-row>
     <v-row justify="center">
       <v-col cols="12" class="mx-auto">
-        <!-- <v-sheet
-    class="mx-auto"
-    max-width="100%"
-    color="transparent"
-  >
-    <v-slide-group multiple show-arrows>
-      <v-slide-item
-        v-for="n in 5"
-        :key="n"
-      >
-        <v-card class="ma-4" height="150" width="150" color="white"></v-card>
-      </v-slide-item>
-    </v-slide-group>
-  </v-sheet> -->
       </v-col>
     </v-row>
   </v-card>
+    </v-col>
+</v-row>
 </template>
 
 <script>

@@ -1,31 +1,33 @@
 <template>
   <div class="">
-    <v-card class="my-10" width="100%" flat>
-      <v-row style="height:100%" justify="center" align="center">
-        <v-col cols="12" align="center">
-          <v-container>
-            <v-row justify-md="center" align="center">
-              <v-col cols="12" md="7">
-                <v-row>
-                   <span class="text--black ms text-left">{{ company_des}}</span>
-                </v-row>
-              </v-col>
-              <v-col cols="5">
-                <v-img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/About-us-banner-img.png"></v-img>
-              </v-col>
+      <v-row justify="center">
+        <v-col md="10">
+              <v-card class="my-10" width="100%" flat>
+                <v-row style="height:100%" justify="center" align="center">
+                  <v-col cols="12" align="center">
+                    <v-container>
+                      <v-row justify-md="center" align="center">
+                        <v-col cols="12" md="7">
+                          <v-row justify="center">
+                            <span class=" px-4 text--black ms text-left">{{ company_des}}</span>
+                          </v-row>
+                        </v-col>
+                        <v-col cols="5">
+                          <v-img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/About-us-banner-img.png"></v-img>
+                        </v-col>
 
-                 <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">
-                      <h3 class="display-2 orange--text border-yellow">About Us</h3>
-                      <p class="fs_header_2 nunito text--black">Future starts from today !</p>
-                      <span class="text--black ms text-left">{{ company_des}}</span>
-                </v-col> -->
-            </v-row>
-            <v-row>
-            </v-row>
-          </v-container>
+                          <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">
+                                <h3 class="display-2 orange--text border-yellow">About Us</h3>
+                                <p class="fs_header_2 nunito text--black">Future starts from today !</p>
+                                <span class="text--black ms text-left">{{ company_des}}</span>
+                          </v-col> -->
+                      </v-row>
+                    </v-container>
+                  </v-col>
+                </v-row>
+              </v-card>
         </v-col>
       </v-row>
-    </v-card>
   </div>
 </template>
 

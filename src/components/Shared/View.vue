@@ -75,7 +75,7 @@
               <div class="circular--portrait hidden-sm-and-down">
                 <img
                   class="rd"
-                  src="https://pbs.twimg.com/profile_images/1232704400491151363/C5IpS4WF_400x400.jpg"
+                  src="https://i.pinimg.com/564x/42/15/28/421528c803bf0936a8d810256133872e.jpg"
                 />
               </div>
             </v-card-title>

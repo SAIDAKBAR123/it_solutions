@@ -87,12 +87,12 @@ export default {
         { name: 'About Us', path: '/' },
         { name: 'Blogs', path: '/blog' },
         { name: 'Portfolio', path: '/portfolio' },
-        { name: 'Contacts', path: '' }
+        { name: 'Contacts', path: '/contacts' }
       ]
     }
   },
   mounted () {
-    this.$vuetify.theme.dark = false
+    this.$vuetify.theme.dark = true
   }
 }
 </script>
