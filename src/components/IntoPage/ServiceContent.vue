@@ -8,7 +8,7 @@
                   </v-col>
               </v-row>
           <v-row justify-md="center" align-md="center">
-              <v-col  cols="12" md="3" lg="3" v-for="(item,i) in services" :key="i">
+              <v-col  cols="12" md="4" lg="3" v-for="(item,i) in services" :key="i">
                     <v-timeline  dense right  small>
                         <v-timeline-item class="py-7" small="" fill-dot v-for="(cr,i) in item.type" :key="i" color="yellow darken-2" >
                             <span class="nunito">{{cr.text}}</span></v-timeline-item>

@@ -11,7 +11,7 @@
                 </v-row>
               </v-col>
               <v-col cols="5">
-                <v-img src="https://www.pngmart.com/files/9/Marvel-Thanos-PNG-Free-Download.png"></v-img>
+                <v-img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/About-us-banner-img.png"></v-img>
               </v-col>
 
                  <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">

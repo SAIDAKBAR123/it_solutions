@@ -13,7 +13,7 @@
         class="text-uppercase text--secondary"
         ><v-icon>mdi-chevron-left</v-icon>Black to blog</v-btn
       >
-      <v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/')" class="item-select">
           <v-img max-width="130" :src="require('../../assets/images/logo1.png')"></v-img>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -87,8 +87,7 @@ export default {
         { name: 'About Us', path: '/' },
         { name: 'Blogs', path: '/blog' },
         { name: 'Portfolio', path: '/portfolio' },
-        { name: 'Contacts', path: '' },
-        { name: 'Privacy policy', path: '' }
+        { name: 'Contacts', path: '' }
       ]
     }
   },
