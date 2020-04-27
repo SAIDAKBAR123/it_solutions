@@ -9,7 +9,7 @@
       <v-col cols="12">
         <v-row justify="center" no-gutters>
           <v-col cols="auto" v-for="(item, i) in technologies" :key="i">
-                  <div data-aos="zoom-out-down"   data-aos-delay="10"  data-aos-duration="1000">
+                  <div data-aos="zoom-out-down"   data-aos-duration="1000">
                     <v-card color="transparent" flat class="my-3 mx-6" max-width="260">
                       <v-row justify="center">
                         <v-col cols="auto">
