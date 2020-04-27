@@ -8,10 +8,10 @@
         </v-row>
         <v-row  justify="center">
             <v-col cols="12" md="8" class="px-0">
-                <v-card class="px-0 py-0" tile elevation="12" dark>
+                <v-card class="px-0 py-0" tile elevation="12">
                     <v-row justify="center">
                         <v-col cols="12" md="8" class="pr-0  py-0">
-                           <v-card dark tile flat>
+                           <v-card tile flat>
                               <v-card-title>
                                   <span>Send us a message</span>
                                   <v-spacer></v-spacer>
