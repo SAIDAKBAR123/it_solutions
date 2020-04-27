@@ -8,7 +8,7 @@
        </v-row>
         <v-row justify-md="start" class="py-3">
               <v-col class="px-0" cols="auto">
-                  <v-btn x-large text  tile active-class rounded>ВСЕ РАБОТЫ</v-btn>
+                  <v-btn x-large text @click="getLoad" tile active-class rounded>ВСЕ РАБОТЫ</v-btn>
               </v-col>
               <v-col  class="px-0"  cols="auto">
                   <v-btn x-large  text tile>ВЕБ-САЙТЫ</v-btn>
@@ -62,6 +62,9 @@
               <v-btn dark color="yellow darken-3" rounded block x-large class="px-7 py-2 text-capitalize">Load More</v-btn>
           </v-col>
        </v-row>
+          <v-overlay :value="overlay">
+             <v-progress-circular indeterminate size="64"></v-progress-circular>
+          </v-overlay>
      </v-container>
   </div>
 </template>
@@ -70,6 +73,7 @@
 export default {
   data () {
     return {
+      overlay: false,
       isAvailable: false,
       projects: [{
         name: 'Aritech',
@@ -115,6 +119,12 @@ export default {
     }, 3000)
   },
   methods: {
+    getLoad () {
+      this.overlay = true
+      setTimeout(() => {
+        this.overlay = false
+      }, 4000)
+    }
   }
 }
 </script>

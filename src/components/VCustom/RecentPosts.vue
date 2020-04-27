@@ -1,8 +1,7 @@
 <template>
   <div>
-    <v-container class="">
-      <h3 class="display-1 my-3">Recent Posts</h3>
-      <v-row class="my-3" v-for="(item, i) in popularPosts" :key="i" no-gutters>
+    <v-container class="py-0">
+      <v-row v-for="(item, i) in popularPosts" :key="i" no-gutters>
         <v-card flat max-width="100%">
           <v-row>
             <v-col cols="12" md="3">
@@ -33,7 +32,7 @@
       </v-row>
       <v-row justify="start">
           <v-col cols="auto">
-            <v-pagination circle :length="5" :total-visible="5"></v-pagination>
+            <v-pagination color="yellow darken-2" circle v-model="page" :length="5" :total-visible="5"></v-pagination>
           </v-col>
       </v-row>
     </v-container>
@@ -44,6 +43,7 @@
 export default {
   data () {
     return {
+      page: 1,
       popularPosts: [
         {
           username: 'Jonhas Anotoli',
@@ -70,16 +70,6 @@ export default {
           title: 'Masalalarning o’ziga kelsak, boshlanishida oson bo’lmaydi. Lekin vaqt o’tib 100-300 ta masala ishlay olganizdan keyin, jarayon avtomatlashib ketadi.',
           topicImg:
             'https://www.startupshk.com/wp-content/uploads/2014/06/060714_Google_DSC4350.jpg',
-          image: 'https://i.udemycdn.com/user/200_H/27878376_ce40_3.jpg',
-          date: '18:34 / 26.04.2020',
-          chips: ['C++', 'Computer Networks', 'Cisco'],
-          path: 'article/2'
-        },
-        {
-          username: 'Abdul Bari',
-          title: 'Google is important while using Dropbox',
-          topicImg:
-            'https://www.thesun.co.uk/wp-content/uploads/2020/03/NINTCHDBPICT000569046725.jpg',
           image: 'https://i.udemycdn.com/user/200_H/27878376_ce40_3.jpg',
           date: '18:34 / 26.04.2020',
           chips: ['C++', 'Computer Networks', 'Cisco'],

@@ -38,21 +38,8 @@
       <v-container class="">
       <v-row no-gutters>
         <v-col
-          cols="12"
-          sm="6"
-          md="8"
-        >
-          <v-card
-            class="pa-2"
-            tile
-            flat
-          >
-            <recent-posts />
-          </v-card>
-        </v-col>
-        <v-col
           cols="6"
-          md="4"
+          md="7"
         >
           <v-card
             color="transparent"
@@ -60,7 +47,45 @@
             outlined
             tile
           >
-            THIS SIDE IS ON PROCESS...
+            <v-row>
+              <v-col  cols="auto">
+                <v-img max-width="100%" max-height="420" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Falejandrocremades%2Ffiles%2F2018%2F12%2Fbusiness-3605367_1920-1200x741.jpg"></v-img>
+              </v-col>
+              <v-col align-self="center" class="mx-1 py-0" cols="auto">
+                <v-row justify="center" align="center">
+                  <v-col class="py-0 px-1" cols="auto" align-self="center">
+                     <v-icon size="18" color="grey darken-4" dark>mdi-calendar-text-outline</v-icon>
+                  </v-col>
+                  <v-col cols="auto" class="px-0" align-self="center">
+                    <span class="nunito-sans-default"> 2/21/2020</span>
+                  </v-col>
+                </v-row>
+              </v-col>
+              <v-col class="py-0" cols="12">
+                <h3 class="nunito item-select">Top-5 тенденций digital-маркетинга, на которые следует обратить внимание в 2020 году</h3>
+                <p class="nunito-sans text--secondary">Digital-маркетинг меняется каждый год. Тенденции меняются как раз тогда, когда ты думаешь, что делаешь всё верно. Ваша единственная лучшая защита от конкуренции — это уникальный подход. Помните...</p>
+              </v-col>
+              <v-col>
+                <v-row justify="start" align="center">
+                    <v-col>
+                      <v-icon></v-icon>
+                    </v-col>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="6"
+          md="5"
+        >
+          <v-card
+            class="pa-2"
+            tile
+            flat
+          >
+            <recent-posts />
           </v-card>
         </v-col>
       </v-row>
