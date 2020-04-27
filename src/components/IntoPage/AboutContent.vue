@@ -9,11 +9,13 @@
                       <v-row justify-md="center" align="center">
                         <v-col cols="12" md="7">
                           <v-row justify="center">
-                            <span class=" px-4 text--black ms text-left">{{ company_des}}</span>
+                            <span class=" px-4 text--black ms text-left"><span class="ms">К</span>{{ company_des}}</span>
                           </v-row>
                         </v-col>
                         <v-col cols="5">
-                          <v-img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/About-us-banner-img.png"></v-img>
+                         <v-card height="400">
+                            <v-img height="400" src="https://lh3.googleusercontent.com/proxy/faDzQN-9WwrebyDZgDLMB9VnMm2fjEljK9aZ1-D096AIzGIqzcQ6yPmoutO4kggm3i73rbMLpRNVDcMAXUi_2BYGLgkEGIHnmzbds3GIv4SY55H8X8ocrcGKyCVTqd3uwYSTlb5z2w"></v-img>
+                         </v-card>
                         </v-col>
 
                           <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">
@@ -35,7 +37,7 @@
 export default {
   data () {
     return {
-      company_des: 'Компания INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) была основана в структуре Университета Инха в Ташкенте. Команда профессиональных и креативных специалистов готова выполнить ваши пожелания по разработке уникальных сайтов, мобильных приложений, информационных систем и ресурсов, а также по ИТ-консалтингу. Мы мыслим глобально и работаем с каждым клиентом, учитывая особенности вашей компании и сферы деятельности.',
+      company_des: 'омпания INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) была основана в структуре Университета Инха в Ташкенте. Команда профессиональных и креативных специалистов готова выполнить ваши пожелания по разработке уникальных сайтов, мобильных приложений, информационных систем и ресурсов, а также по ИТ-консалтингу. Мы мыслим глобально и работаем с каждым клиентом, учитывая особенности вашей компании и сферы деятельности.',
       services: [
         {
           name: 'Mobile development',
@@ -76,13 +78,12 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i&display=swap');
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic,cyrillic-ext,greek-ext");
 .ms {
  font-family: 'Montserrat', sans-serif;
-  font-size: 27px;
+  font-size: 21px;
   line-height: 60px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .7s;

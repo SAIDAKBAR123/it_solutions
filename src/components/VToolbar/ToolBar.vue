@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar  :dark="isDarkMode ? true : false">
+    <v-app-bar flat :dark="isDarkMode ? true : false" fixed>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = true"
@@ -31,9 +31,7 @@
       <v-list-item>
           <v-img :src="require('../../assets/images/logo1.png')"></v-img>
       </v-list-item>
-
       <v-divider></v-divider>
-
       <v-list dense>
         <v-list-item :to="item.path" v-for="item in toolbar" :key="item.name" link>
           <!-- <v-list-item-icon>

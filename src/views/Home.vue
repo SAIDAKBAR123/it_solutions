@@ -44,8 +44,8 @@
         >
           <v-card
             class="pa-2"
-            outlined
             tile
+            flat
           >
             <recent-posts />
           </v-card>

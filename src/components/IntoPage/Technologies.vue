@@ -4,7 +4,7 @@
   <v-card class="my-10" tile flat>
     <v-row style="height:100%" justify="center" align="center">
       <v-col cols="12" align="center">
-        <h3 class="display-2 pt-10 orange--text border-yellow">Technologies</h3>
+        <h3 class="display-2 pt-10 orange--text border-yellow text-capitalize">технологии</h3>
       </v-col>
       <v-col cols="12">
         <v-row justify="center" no-gutters>

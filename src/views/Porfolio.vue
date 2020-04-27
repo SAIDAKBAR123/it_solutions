@@ -2,6 +2,25 @@
   <div>
      <v-container>
        <v-row>
+          <v-col class="pb-0">
+              <h3 class="nunito fs_28 text-capitalize">Портфолио</h3>
+          </v-col>
+       </v-row>
+        <v-row justify-md="start" class="py-3">
+              <v-col class="px-0" cols="auto">
+                  <v-btn x-large text  tile active-class rounded>ВСЕ РАБОТЫ</v-btn>
+              </v-col>
+              <v-col  class="px-0"  cols="auto">
+                  <v-btn x-large  text tile>ВЕБ-САЙТЫ</v-btn>
+              </v-col>
+              <v-col cols="auto">
+                  <v-btn x-large  text tile active-class>ВЕБ-ПРИЛОЖЕНИЯ</v-btn>
+              </v-col >
+               <v-col class="px-0" cols="auto">
+                  <v-btn x-large  text tile>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</v-btn>
+              </v-col>
+        </v-row>
+       <v-row>
                 <v-col cols="12" md="6" lg="6" align-self="center" v-for="(item,i) in projects" :key="i">
                   <v-hover v-slot:default="{ hover }">
                     <v-card

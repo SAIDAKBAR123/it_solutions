@@ -2,10 +2,10 @@
   <div>
         <v-row justify="center">
           <v-col md="10">
-              <v-card  tile  :color="'#F6F6F6'" flat class=" text-black">
+              <v-card  tile flat class=" text-black">
               <v-row justify-md="center">
                   <v-col md="8">
-                      <p class="text-center display-1">Услуги</p>
+                       <h3 class="display-2 text-center pt-10 orange--text border-yellow">Услуги</h3>
                   </v-col>
               </v-row>
           <v-row justify-md="center" align-md="center">
