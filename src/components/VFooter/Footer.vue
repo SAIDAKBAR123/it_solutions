@@ -68,7 +68,7 @@
                 <div class="d-flex align-baseline">
                   <v-icon>mdi-bell-ring-outline</v-icon>
                   <span class="px-2 nunito fs_18"
-                    >Stay turned with fresh news.</span
+                    >Будьте в курсе свежих новостей.</span
                   >
                 </div>
                 <v-text-field
@@ -76,12 +76,12 @@
                   class="mt-3 text-box"
                   clearable
                   dense
-                  label="mail address"
+                  label="example@mail.com"
                   single-line
                   outlined
                 ></v-text-field>
                 <v-btn large outlined text color="orange lighten-3"
-                  >Send Mail</v-btn
+                  >Отправить почту</v-btn
                 >
               </v-col>
             </v-row>
@@ -91,8 +91,7 @@
       <v-row justify="center" justify-md="center" no-gutters>
         <span class="fs_20 text--secondary text-center">
           {{ new Date().getFullYear() }} —
-          <span style="color: #FFCC80">IT Solutions</span>. All rights are
-          reserved</span
+          <span style="color: #FFCC80">IT Solutions</span>. Все права защищены.</span
         >
       </v-row>
     </v-container>

@@ -2,7 +2,7 @@
   <div>
       <v-row >
         <v-col offset-md="1" cols="auto">
-            <h4 class="nunito text-uppercase">Comments</h4>
+            <h4 class="nunito text-uppercase">Комментарии</h4>
             <v-divider></v-divider>
         </v-col>
           <v-col cols="auto" >

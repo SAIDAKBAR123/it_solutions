@@ -17,7 +17,7 @@
     >
       <v-spacer></v-spacer>
 
-     <v-btn to="/blog" text x-large rounded color="orange lighten-2">Join to Blog</v-btn>
+     <v-btn to="/blog" text x-large rounded color="orange lighten-2">Присоединиться к блогу</v-btn>
     </v-app-bar>
   </div>
 </template>

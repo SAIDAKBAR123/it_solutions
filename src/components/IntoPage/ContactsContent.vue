@@ -3,7 +3,7 @@
     <v-container fluid>
         <v-row>
             <v-col>
-                <h4 class="text-center nunito-sans fs_28">Hi again, Would you like to know about us?</h4>
+                <h2 class="text-center nunito fs_28 display-1 orange--text">Есть вопрос? Свяжитесь с нами</h2>
             </v-col>
         </v-row>
         <v-row  justify="center">
@@ -13,7 +13,7 @@
                         <v-col cols="12" md="8" class="pr-0  py-0">
                            <v-card tile flat>
                               <v-card-title>
-                                  <span>Send us a message</span>
+                                  <span>Отправьте нам сообщение</span>
                                   <v-spacer></v-spacer>
                                   <v-icon size="40" color="yellow darken-3">mdi-mailbox-open-up-outline</v-icon>
                               </v-card-title>
@@ -58,7 +58,7 @@
                                     </v-row>
                                     <v-row justify="end">
                                         <v-col cols="auto">
-                                            <v-btn x-large rounded color="yellow darken-2" dark right>Send <v-icon right>mdi-send</v-icon></v-btn>
+                                            <v-btn x-large rounded color="yellow darken-2" dark right>Отправить <v-icon right>mdi-send</v-icon></v-btn>
                                         </v-col>
                                     </v-row>
                                     </v-container>
@@ -69,7 +69,7 @@
                         <v-col cols="12" md="4" class="pl-0 py-0">
                            <v-card height="100%" class="py-0" tile flat color="yellow darken-3" dark>
                               <v-card-title>
-                                  <span>Contact Information</span>
+                                  <span class=" text-capitalize">местоположение</span>
                               </v-card-title>
                               <v-card-text>
                                    <v-list two-line subheader color="transparent" tile flat>
@@ -108,17 +108,17 @@ export default {
       contacts: [
         {
           icon: 'mdi-map-marker-radius',
-          title: 'Location',
+          title: 'местоположение',
           text: 'Mirzo ulugbek Tumani, 202-maktab zonasi'
         },
         {
           icon: 'mdi-cellphone-sound',
-          title: 'Contact Number',
+          title: 'Контактный номер',
           text: 'Mirzo ulugbek Tumani, 202-maktab zonasi'
         },
         {
           icon: 'mdi-email-mark-as-unread',
-          title: 'Email',
+          title: 'E-mail',
           text: 'asdfasfasdfds@gmail.com'
         }
       ]

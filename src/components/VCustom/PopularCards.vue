@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-5">
     <v-row justify="center" justify-md="center">
-      <h2 class=" pt-12 text-center nunito fs_header">Most Popular</h2>
+      <h2 class=" pt-12 text-center nunito fs_header">Самый популярный</h2>
     </v-row>
     <v-row justify="center" no-gutters>
       <v-col v-for="(item, n) in popularPosts" :key="n" cols="12" sm="3" md="3">
@@ -22,7 +22,7 @@
             absolute
             color="#FFF59D"
           >
-            <v-btn color="yellow darken-3" text tile >more info</v-btn>
+            <v-btn color="yellow darken-3" text tile >подробнее</v-btn>
           </v-overlay>
         </v-fade-transition>
           <v-list class="my-0">

@@ -11,7 +11,7 @@
         text
         tile
         class="text-uppercase text--secondary"
-        ><v-icon>mdi-chevron-left</v-icon>Black to blog</v-btn
+        ><v-icon>mdi-chevron-left</v-icon>Вернуться в блог</v-btn
       >
       <v-toolbar-title @click="$router.push('/')" class="item-select">
           <v-img max-width="130" :src="require('../../assets/images/logo1.png')"></v-img>
@@ -82,10 +82,10 @@ export default {
       special: '',
       drawer: false,
       toolbar: [
-        { name: 'About Us', path: '/' },
-        { name: 'Blogs', path: '/blog' },
-        { name: 'Portfolio', path: '/portfolio' },
-        { name: 'Contacts', path: '/contacts' }
+        { name: 'О нас', path: '/' },
+        { name: 'Блоги', path: '/blog' },
+        { name: 'портфолио', path: '/portfolio' },
+        { name: 'контакты', path: '/contacts' }
       ]
     }
   },

@@ -14,7 +14,7 @@
                         </v-col>
                         <v-col cols="5">
                          <v-card height="400">
-                            <v-img height="400" src="https://lh3.googleusercontent.com/proxy/faDzQN-9WwrebyDZgDLMB9VnMm2fjEljK9aZ1-D096AIzGIqzcQ6yPmoutO4kggm3i73rbMLpRNVDcMAXUi_2BYGLgkEGIHnmzbds3GIv4SY55H8X8ocrcGKyCVTqd3uwYSTlb5z2w"></v-img>
+                            <v-img height="400" src="https://www.at-visions.com/wp-content/uploads/2017/06/it-service.png"></v-img>
                          </v-card>
                         </v-col>
 
@@ -37,7 +37,7 @@
 export default {
   data () {
     return {
-      company_des: 'омпания INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) была основана в структуре Университета Инха в Ташкенте. Команда профессиональных и креативных специалистов готова выполнить ваши пожелания по разработке уникальных сайтов, мобильных приложений, информационных систем и ресурсов, а также по ИТ-консалтингу. Мы мыслим глобально и работаем с каждым клиентом, учитывая особенности вашей компании и сферы деятельности.',
+      company_des: 'омпания INNOVATIVE TECHNOLOGIES SOLUTIONS (IT Solutions) создана в структуре Университета Инха в г. Ташкенте. Команда профессиональных и креативных специалистов готова реализовать ваши пожелания по разработке уникальных веб-сайтов, мобильных приложений, информационных систем и ресурсов, а также ИТ-консалтинга. Мы мыслим глобально и работаем с каждым клиентом, учитывая особенности Вашей компании и сферы деятельности',
       services: [
         {
           name: 'Mobile development',

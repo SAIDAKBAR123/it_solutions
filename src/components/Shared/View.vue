@@ -118,7 +118,7 @@
           <v-row>
             <v-col cols="9" offset-lg="1">
               <strong class=" text--secondary nunito-sans-default fs_20"
-                >Related posts</strong
+                >Похожие посты</strong
               ></v-col
             >
           </v-row>

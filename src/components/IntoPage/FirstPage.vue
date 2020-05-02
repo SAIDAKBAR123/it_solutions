@@ -23,13 +23,13 @@
             ></vue-typer> -->
             <v-col class="my-auto">
               <v-btn
-                class="mx-auto"
+                class="mx-auto text-capitalize"
                 @click="getAboutUs"
                 color="orange lighten-2 text-center"
                 outlined
                 rounded
                 x-large
-                >Who we are ?</v-btn
+                >кто мы ?</v-btn
               >
             </v-col>
           </v-col>
