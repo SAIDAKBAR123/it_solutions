@@ -59,7 +59,7 @@
        </v-row>
        <v-row justify="center">
           <v-col cols="auto">
-              <v-btn dark color="yellow darken-3" rounded block x-large class="px-7 py-2 text-capitalize">Load More</v-btn>
+              <v-btn dark color="yellow darken-3" elevation="0" rounded block x-large class="px-7 py-2 text-capitalize">загрузить больше</v-btn>
           </v-col>
        </v-row>
           <v-overlay :value="overlay">

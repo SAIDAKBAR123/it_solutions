@@ -25,7 +25,7 @@
                           <h4 style="line-height: 40px;" class="nunito fs_28_bold">Life in Germany is totally awesome. Don't you mind so?</h4>
                         </v-col>
                         <v-col cols="12">
-                           <v-btn color="yellow darken-2" class=" text-capitalize px-7" dark>Read more</v-btn>
+                           <v-btn color="yellow darken-2" class=" text-capitalize px-7" dark>Подробнее</v-btn>
                         </v-col>
                       </v-row>
                 </v-card-text>

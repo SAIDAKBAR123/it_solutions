@@ -23,29 +23,29 @@
                                     <v-row>
                                         <v-col
                                         cols="12"
-                                        md="10"
+                                        md="6"
                                         >
                                         <v-text-field
                                             color="yellow darken-2"
                                             v-model="firstname"
-                                            label="First name"
+                                            label="Имя"
                                             required
                                         ></v-text-field>
                                         </v-col>
                                         <v-col
                                         cols="12"
-                                        md="10"
+                                        md="6"
                                         >
                                         <v-text-field
                                             color="yellow darken-2"
                                             v-model="lastname"
-                                            label="Last name"
+                                            label="Фамилия"
                                             required
                                         ></v-text-field>
                                         </v-col>
                                         <v-col
                                         cols="12"
-                                        md="10"
+                                        md="12"
                                         >
                                         <v-text-field
                                             color="yellow darken-2"
@@ -54,6 +54,16 @@
                                             label="E-mail"
                                             required
                                         ></v-text-field>
+                                        </v-col>
+                                        <v-col
+                                        cols="12"
+                                        md="12"
+                                        >
+                                          <v-textarea
+                                            name="input-7-1"
+                                            label="текст"
+                                            value=""
+                                            ></v-textarea>
                                         </v-col>
                                     </v-row>
                                     <v-row justify="end">
@@ -109,17 +119,17 @@ export default {
         {
           icon: 'mdi-map-marker-radius',
           title: 'местоположение',
-          text: 'Mirzo ulugbek Tumani, 202-maktab zonasi'
+          text: 'Ziyolilar str 9, Mirzo Ulugbek district, Тошкент, Uzbekistan'
         },
         {
           icon: 'mdi-cellphone-sound',
           title: 'Контактный номер',
-          text: 'Mirzo ulugbek Tumani, 202-maktab zonasi'
+          text: '+99899 xxx-yy-zz'
         },
         {
           icon: 'mdi-email-mark-as-unread',
           title: 'E-mail',
-          text: 'asdfasfasdfds@gmail.com'
+          text: 'example@gmail.com'
         }
       ]
     }

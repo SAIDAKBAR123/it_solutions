@@ -104,7 +104,7 @@
                 colored-border
                 icon="mdi-link-variant"
                 >
-                 You can visit the website at: <a class="hpLink" href="http://itsolutions.uz/" target="_blank">itsolutions.uz</a>
+                Вы можете посетить веб-сайт по адресу: <a class="hpLink" href="http://itsolutions.uz/" target="_blank">itsolutions.uz</a>
     </v-alert>
         </v-col>
         <v-col offset-md="2" cols="12" md="8">

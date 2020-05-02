@@ -40,7 +40,7 @@
                 v-model="sendMsg"
                 class="my-2 mx-2"
                 dense
-            label="Join the discussion"
+            label="присоединиться к обсуждению"
             single-line
 
           ></v-text-field>
