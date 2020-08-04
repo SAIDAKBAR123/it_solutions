@@ -1,6 +1,6 @@
 <template>
   <section class="">
-    <v-container class="">
+    <v-container class="" :fluid="$vuetify.breakpoint.lg">
       <v-row justify-md="center">
         <v-col md="6" cols="12">
           <v-row justify="center" justify-md="center">

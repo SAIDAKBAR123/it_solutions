@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar flat :dark="isDarkMode ? true : false" fixed>
+    <v-app-bar flat :dark="isDarkMode ? true : false" >
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = true"
