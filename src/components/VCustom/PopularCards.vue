@@ -1,12 +1,10 @@
 <template>
-  <v-container class="my-5">
+  <v-container class="my-5" :fluid="$vuetify.breakpoint.lg">
     <v-row justify="center" justify-md="center">
       <h2 class=" pt-12 text-center nunito fs_header">Самый популярный</h2>
     </v-row>
     <v-row justify="center" no-gutters>
       <v-col v-for="(item, n) in popularPosts" :key="n" cols="12" sm="3" md="3">
-         <v-hover>
-    <template v-slot:default="{ hover }">
         <v-card flat  class="mx-2 my-12" max-width="374">
           <v-img
             class="elevation-4"
@@ -14,18 +12,9 @@
             :src="item.topicImg"
           ></v-img>
 
-          <v-card-title class="nunito">{{ item.title }}</v-card-title>
+          <v-card-title class="nunito py-1">{{ item.title }}</v-card-title>
           <!-- <v-card-title>Tonight's availability</v-card-title> -->
-            <v-fade-transition>
-          <v-overlay
-            v-if="hover"
-            absolute
-            color="#FFF59D"
-          >
-            <v-btn color="yellow darken-3" text tile >подробнее</v-btn>
-          </v-overlay>
-        </v-fade-transition>
-          <v-list class="my-0">
+          <v-list class="my-0 py-0">
             <v-list-item>
               <v-list-item-avatar>
                 <v-img :src="item.image"></v-img>
@@ -45,8 +34,7 @@
             </v-chip-group>
           </v-card-actions>
         </v-card>
-    </template>
-         </v-hover>
+
       </v-col>
     </v-row>
   </v-container>
@@ -69,7 +57,7 @@ export default {
           username: 'Maxmillian Swaitherz',
           title: 'Google is important while using Dropbox',
           image: 'https://cxl.com/wp-content/uploads/2016/03/nate_munger.png',
-          topicImg: 'https://www.theitsolutions.io/sites/default/files/styles/full_width_max_width/public/2019-06/5DIV2444.jpg?itok=0itgYICh',
+          topicImg: 'https://miro.medium.com/max/934/1*UfosUyZgOE97ntxNVuBFEg.png',
           date: '2th April, 2020',
           chips: ['Tapge', 'selon', 'programming']
         },

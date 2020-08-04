@@ -2,17 +2,18 @@
   <div>
     <v-container class="py-0">
       <v-row v-for="(item, i) in popularPosts" :key="i" no-gutters>
-        <v-card flat max-width="100%">
+        <v-card flat max-width="100%" color="transparent">
           <v-row>
-            <v-col cols="12" md="3">
+            <v-col cols="12" md="4" sm="4">
               <v-img
                 class="elevation-0 white--text align-end"
                 :height="140"
+                width="200"
                 :src="item.topicImg"
               >
               </v-img>
             </v-col>
-            <v-col class="px-1" cols="12" md="9">
+            <v-col class="px-1" cols="12" md="8" sm="8">
               <v-row align="center">
                <v-col align-self="center" class="mx-1 py-0" cols="auto">
                   <v-icon size="18" color="grey darken-4" dark>mdi-calendar-text-outline</v-icon>
@@ -20,9 +21,9 @@
               </v-col>
               </v-row>
              <div  @click="$router.push(item.path)"
-                class="nunito item-select px-2"> {{ item.title.length >82 ? item.title.substring(0,79)+'...': item.title }}</div>
+                class="nunito item-select px-2 text-md-body-1"> {{ item.title.length >82 ? item.title.substring(0,79)+'...': item.title }}</div>
               <v-card-text class="text--primary py-0">
-                      <v-row>
+                      <v-row class="py-0">
                            <v-col class="px-1" cols="auto" v-for="(cr,i) in item.chips" :key="i"><v-chip>{{cr}}</v-chip></v-col>
                       </v-row>
               </v-card-text>
@@ -41,6 +42,9 @@
 
 <script>
 export default {
+  created () {
+    console.log(this.$vuetify.breakpoint)
+  },
   data () {
     return {
       page: 1,

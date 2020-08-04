@@ -35,11 +35,13 @@
        </v-parallax>
         <popular-cards />
       </v-card>
-      <v-container class="">
+      <v-container :fluid="$vuetify.breakpoint.lg">
       <v-row no-gutters>
         <v-col
           cols="12"
+          sm="6"
           md="7"
+          lg="7"
         >
           <v-card
             color="transparent"
@@ -48,7 +50,7 @@
             tile
           >
             <v-row>
-              <v-col  cols="auto">
+              <v-col  cols="12">
                 <v-img max-width="100%" max-height="420" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Falejandrocremades%2Ffiles%2F2018%2F12%2Fbusiness-3605367_1920-1200x741.jpg"></v-img>
               </v-col>
               <v-col align-self="center" class="mx-1 py-0" cols="auto">
@@ -79,8 +81,10 @@
           cols="12"
           sm="6"
           md="5"
+          lg="5"
         >
           <v-card
+            color="transparent"
             class="pa-2"
             tile
             flat
