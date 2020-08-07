@@ -90,7 +90,7 @@ export default {
     }
   },
   mounted () {
-    this.$vuetify.theme.dark = true
+    this.$vuetify.theme.dark = false
   }
 }
 </script>

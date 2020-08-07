@@ -12,9 +12,9 @@
             :src="item.topicImg"
           ></v-img>
 
-          <v-card-title class="nunito py-1">{{ item.title }}</v-card-title>
+          <v-card-title class="nunito py-1 item-select">{{ item.title }}</v-card-title>
           <!-- <v-card-title>Tonight's availability</v-card-title> -->
-          <v-list class="my-0 py-0">
+          <v-list v-if="false" class="my-0 py-0">
             <v-list-item>
               <v-list-item-avatar>
                 <v-img :src="item.image"></v-img>

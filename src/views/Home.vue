@@ -16,7 +16,7 @@
                       </v-avatar>
                         </v-col>
                         <v-col class="px-1" md="7">
-                            <span class="nunito">Jose Marian</span><br>
+                            <span class="nunito">IT SOLUTIONS</span><br>
                             <span class="nunito-sans-default">2nd Sep, 2020</span>
                         </v-col>
                       </v-row>

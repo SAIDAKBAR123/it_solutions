@@ -2,27 +2,21 @@
   <div class="">
       <v-row justify="center">
         <v-col md="10">
-              <v-card class="my-10" width="100%" flat>
+              <v-card class="" width="100%" flat>
                 <v-row style="height:100%" justify="center" align="center">
                   <v-col cols="12" align="center">
-                    <v-container>
+                    <v-container class="py-0">
                       <v-row justify-md="center" align="center">
-                        <v-col cols="12" md="7">
+                        <v-col cols="12" md="7" order-md="2" order="2">
                           <v-row justify="center">
                             <span class=" px-4 text--black ms text-left"><span class="ms">К</span>{{ company_des}}</span>
                           </v-row>
                         </v-col>
-                        <v-col cols="5">
+                        <v-col cols="12" md="5" order-md="2" order="1">
                          <v-card height="400">
                             <v-img height="400" src="https://www.at-visions.com/wp-content/uploads/2017/06/it-service.png"></v-img>
                          </v-card>
                         </v-col>
-
-                          <!-- <v-col class="" cols="12" md="8" order="2" order-md="1">
-                                <h3 class="display-2 orange--text border-yellow">About Us</h3>
-                                <p class="fs_header_2 nunito text--black">Future starts from today !</p>
-                                <span class="text--black ms text-left">{{ company_des}}</span>
-                          </v-col> -->
                       </v-row>
                     </v-container>
                   </v-col>
@@ -84,6 +78,13 @@ export default {
   font-size: 21px;
   line-height: 60px;
   font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+ .ms  {
+    font-size: 18px;
+      line-height: 30px;
+      font-weight: 400;
+  }
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .7s;
