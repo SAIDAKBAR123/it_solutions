@@ -2,17 +2,8 @@
   <div>
       <v-container class=" my-11">
           <v-row justify-md="start" class="py-3">
-              <v-col class="px-0" cols="auto">
-                  <v-btn x-large text  tile active-class>ВСЕ РАБОТЫ</v-btn>
-              </v-col>
-              <v-col  class="px-0"  cols="auto">
-                  <v-btn x-large  text tile>ВЕБ-САЙТЫ</v-btn>
-              </v-col>
-              <v-col cols="auto">
-                  <v-btn x-large  text tile active-class>ВЕБ-ПРИЛОЖЕНИЯ</v-btn>
-              </v-col >
-               <v-col class="px-0" cols="auto">
-                  <v-btn x-large  text tile>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</v-btn>
+              <v-col class="px-0" cols="auto" v-for="item in categories" :key="item.name">
+                  <v-btn x-large text  tile active-class>{{item.name}}</v-btn>
               </v-col>
           </v-row>
           <v-row justify="center" justify-lg="center">
@@ -21,12 +12,13 @@
                     <v-card
                         class="item-select"
                         tile
+                        :to="`/portfolio/${item.id}`"
                         :elevation="hover ? 10 : 0"
                         max-width="100%"
                     >
                         <v-img
                         :aspect-ratio="16/9"
-                        :src="item.image"
+                        :src="item.images[0].url"
                         height="570px"
                         >
                             <div
@@ -44,8 +36,7 @@
                               </transition>
                             <span>{{ item.title}}</span>
                         </v-card-title>
-                        <v-card-subtitle>
-                            {{item.content}}
+                        <v-card-subtitle v-html="item.content">
                         </v-card-subtitle>
                     </v-card>
                   </v-hover>
@@ -53,7 +44,7 @@
           </v-row>
           <v-row class="my-5">
               <v-col class="mx-auto">
-                  <v-btn tile block color="#FBC02D" dark x-large>Смотреть портфолио</v-btn>
+                  <v-btn tile block color="#FBC02D" dark x-large to="/portfolio">Смотреть портфолио</v-btn>
               </v-col>
           </v-row>
       </v-container>
@@ -61,31 +52,32 @@
 </template>
 
 <script>
+import Categories from '../../services/Categories'
+import Portfolio from '../../services/Portfolio'
 export default {
   data () {
     return {
-      portfolio: [{
-        title: 'Дизайн сервиса нейросемантики',
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190802090855/1564736935_Xi.jpg',
-        content: 'Сервис для благотворительных акций'
-      },
-      {
-        title: 'Дизайн сервиса нейросемантики',
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        content: 'Сайт для привлечения $200 млн инвестиций в итальянский стартап'
-      },
-      {
-        title: 'Дизайн сервиса нейросемантики',
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190802090855/1564736935_Xi.jpg',
-        content: 'Сайт для продажи элитной недвижимости в Лондоне от £680 тыс'
-      },
-      {
-        title: 'Создание сайта и стиля для агенства недвижимости UK Property Advisors Ltd',
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084405/1552293845_qY.jpg',
-        content: 'Дизайн сервиса нейросемантики'
-      }
-      ]
+      portfolio: [],
+      categories: []
     }
+  },
+  methods: {
+    getCategories () {
+      Categories.getCategories().then(res => {
+        console.log(res)
+        this.categories = res
+      })
+    },
+    getProjects (page, size) {
+      Portfolio.getAll(page, size).then(res => {
+        console.log(res)
+        this.portfolio = res
+      })
+    }
+  },
+  created () {
+    this.getCategories()
+    this.getProjects(1, 4)
   }
 
 }

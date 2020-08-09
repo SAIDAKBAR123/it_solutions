@@ -9,49 +9,30 @@
               label
               dark
               color="orange lighten-5"
-              v-for="i in tags"
-              :key="i"
+              v-for="i in article.tags"
+              :key="i.name"
             >
-              <span class="orange--text nunito fs_18"> {{ i }}</span>
+              <span class="orange--text nunito fs_18"> {{ i.name }}</span>
             </v-chip>
           </v-row>
           <h3 class="nunito fs_header_2 text-center">
-            Nana Prince Hotel - The New Jewel in the Crown of Charismatic Crete
+           {{article.title}}
           </h3>
         </v-col>
       </v-row>
       <v-row class="" justify-md="center">
         <v-col md="4" cols="12">
-          <v-card tile flat color="transparent" class=" text-center"> </v-card>
-        </v-col>
-        <v-col md="4" cols="12">
           <v-card tile flat color="transparent" class=" text-center">
-            <h2 class="nunito fs_18">Josie</h2>
-            <span class="grey--text">24th October, 2020</span>
+            <h2 class="nunito fs_18">ITsolutions</h2>
+            <span class="grey--text">{{ article.createdAt | moment('Do MMM YYYY') }}</span>
           </v-card>
-        </v-col>
-        <v-col cols="4">
-          <!-- <v-card tile flat color="transparent" class=" d-inline-flex text-center">
-            <div class="d-flex flex-baseline">  <v-badge
-            v-for="i in icons"
-                :key="i"
-        bordered
-        color="orange"
-         content="44"
-        overlap
-      >
-        <v-avatar size="35" class="mx-3" text   color="#dae2e4">
-      <v-icon dark size="25" color="black">{{i.icon}}</v-icon>
-    </v-avatar>
-      </v-badge>
-      </div>
-          </v-card> -->
         </v-col>
       </v-row>
       <v-row justify="center"  justify-md="center">
         <v-col cols="12" md="12">
           <v-card color="transparent" tile flat>
             <v-card
+            v-if="false"
               tile
               flat
               color="transparent"
@@ -71,7 +52,7 @@
                   </v-avatar>
                 </v-badge>
             </v-card>
-            <v-card-title class=" justify-center">
+            <v-card-title class=" justify-center mt-10">
               <div class="circular--portrait hidden-sm-and-down">
                 <img
                   class="rd"
@@ -82,36 +63,16 @@
             <v-img
               style="position: relative;"
               max-height="500"
-              src="https://pbs.twimg.com/media/DlxmXnfW4AAic08.jpg"
+              :src="article.mainImage.mainImageUrl"
             >
             </v-img>
-            <!-- <v-card-text
-        class="pt-6"
-        style="position: relative;"
-      >
-        <v-btn
-          absolute
-          color="blue"
-          class="white--text"
-          fab
-          large
-
-          top
-        >
-        <v-avatar  size="70">
-           <v-img src="https://pbs.twimg.com/profile_images/1232704400491151363/C5IpS4WF_400x400.jpg"></v-img>
-        </v-avatar>
-        </v-btn>
-      </v-card-text> -->
           </v-card>
         </v-col>
       </v-row>
       <v-row justify-md="center" class="my-10">
         <v-col offset-md="1" cols="12" md="8">
           <v-card tile flat>
-            <v-card-text class="nunito-sans" v-text="essay"> </v-card-text>
-            <v-card-text class="nunito-sans" v-text="essay1"> </v-card-text>
-            <v-card-text class="nunito-sans" v-text="essay1"> </v-card-text>
+            <v-card-text :class="$vuetify.breakpoint.xs? 'nunito-ph' : 'nunito-sans'" v-html="article.body"> </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="3">
@@ -123,7 +84,7 @@
             >
           </v-row>
           <v-row v-for="(item, i) in recentPosts" :key="i">
-            <v-col cols="12" md="9" lg="9" offset-md="1">
+            <v-col v-if="false" cols="12" md="9" lg="9" offset-md="1">
               <v-card color="transparent" tile flat>
                 <v-list class="my-0">
                   <h2 class="nunito fs_22 text-wrap px-3 item-select">
@@ -156,9 +117,9 @@
           </v-row>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row >
         <v-col >
-          <v-comments />
+          <v-comments :timesSeen="article.timesSeen" :comments="article.comments" />
         </v-col>
       </v-row>
     </v-container>
@@ -167,11 +128,26 @@
 
 <script>
 import VComments from '../VCustom/Comments'
+import Blogs from '../../services/Blogs'
 export default {
   components: {
     VComments
   },
   data: () => ({
+    article: {
+      body: '',
+      createdAt: '',
+      id: null,
+      isCommentable: 1,
+      mainImage: {},
+      mainImageId: 3,
+      status: 1,
+      tags: [],
+      timesSeen: 1,
+      title: '',
+      updatedAt: '',
+      userId: null
+    },
     icons: [
       {
         icon: 'mdi-instagram',
@@ -220,7 +196,20 @@ export default {
       '“We are a highly experienced team of hospitality real estate executives and this is not our first crisis. We have purposefully and thoroughly implemented cost-cutting and liquidity measures needed to face the COVID-19 threat,” said Thomas J. Baltimore, Jr., chairman and CEO of Park. “While equity markets have shown unprecedented volatility recently, Park remains the owner of iconic core assets like Hilton Hawaiian Village, the Hilton/Waldorf Bonnet Creek Resort, the JW Marriott San Francisco Union Square and the Hyatt Regency Boston. These assets—and many others like them owned by Park— hold strong market leadership positions and are managed by world-class hotel management companies. Recognizing the resiliency and value of these assets, I have recently made a significant purchase of additional shares of Park common stock as a demonstration of my confidence in this company.',
     essay1:
       '“We are a highly experienced team of hospitality real estate executives and this is not our first crisis. We have purposefully and thoroughly implemented cost-cutting and liquidity measures needed to face the COVID-19 threat,” said Thomas J. Baltimore, Jr., chairman and CEO of Park. “While equity markets have shown unprecedented volatility recently, Park remains the owner of iconic core assets like Hilton Hawaiian Village, the Hilton/Waldorf Bonnet Creek Resort, the JW Marriott San Francisco Union Square and the Hyatt Regency Boston. These assets—and many others like them owned by Park— hold strong market leadership positions and are managed by world-class hotel management companies. Recognizing the resiliency and value of these assets, I have recently made a significant purchase of additional shares of Park common stock as a demonstration of my confidence in this company.'
-  })
+  }),
+  methods: {
+    getArticle () {
+      Blogs.getSinglePost(this.$route.params.id).then(res => {
+        console.log(res)
+        this.article = res
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  },
+  created () {
+    this.getArticle()
+  }
 }
 </script>
 

@@ -7,24 +7,15 @@
           </v-col>
        </v-row>
         <v-row justify-md="start" class="py-3">
-              <v-col class="px-0" cols="auto">
-                  <v-btn x-large text @click="getLoad" tile active-class rounded>ВСЕ РАБОТЫ</v-btn>
-              </v-col>
-              <v-col  class="px-0"  cols="auto">
-                  <v-btn x-large  text tile>ВЕБ-САЙТЫ</v-btn>
-              </v-col>
-              <v-col cols="auto">
-                  <v-btn x-large  text tile active-class>ВЕБ-ПРИЛОЖЕНИЯ</v-btn>
-              </v-col >
-               <v-col class="px-0" cols="auto">
-                  <v-btn x-large  text tile>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</v-btn>
+              <v-col class="px-0" cols="auto" v-for="item in categories" :key="item.id">
+                  <v-btn x-large text @click="getLoad" tile active-class rounded>{{item.name}}</v-btn>
               </v-col>
         </v-row>
        <v-row>
                 <v-col cols="12" md="6" lg="6" align-self="center" v-for="(item,i) in projects" :key="i">
                   <v-hover v-slot:default="{ hover }">
                     <v-card
-                        :href="item.path"
+                        :to="`/portfolio/${item.id}`"
                         target="_blank"
                         class="item-select"
                         tile
@@ -33,7 +24,7 @@
                     >
                         <v-img
                         :aspect-ratio="16/9"
-                        :src="item.image"
+                        :src="item.images[0].url"
                         height="570px"
                         >
                             <div
@@ -49,7 +40,7 @@
                             <v-icon class="px-2" color="black" v-if="hover">mdi-arrow-right</v-icon>
                             <v-icon class="" color="black" v-else>-</v-icon>
                               </transition>
-                            <span>{{ item.name}}</span>
+                            <span>{{ item.title}}</span>
                         </v-card-title>
                     </v-card>
                   </v-hover>
@@ -70,47 +61,15 @@
 </template>
 
 <script>
+import Categories from '../services/Categories'
+import Portfolio from '../services/Portfolio'
 export default {
   data () {
     return {
+      categories: [],
       overlay: false,
       isAvailable: false,
-      projects: [{
-        name: 'Aritech',
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        path: 'http://airtechnic.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'Traffic.uz',
-        path: 'http://traffic.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'Yuridik.uz',
-        path: 'https://yuridik.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'Lider PRom',
-        path: 'http://liderprom.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'Agarcis',
-        path: 'https://agarcis.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'YAIT',
-        path: 'http://yait.uz/'
-      },
-      {
-        image: 'https://reconcept.ru/uploads/images/Portfolio/190311084515/1552293915_F7.jpg',
-        name: 'Yomi uz',
-        path: 'http://yomi.uz/'
-      }
-      ]
+      projects: []
     }
   },
   mounted () {
@@ -124,7 +83,23 @@ export default {
       setTimeout(() => {
         this.overlay = false
       }, 4000)
+    },
+    getCategories () {
+      Categories.getCategories().then(res => {
+        console.log(res)
+        this.categories = res
+      })
+    },
+    getProjects (page) {
+      Portfolio.getAll(page).then(res => {
+        console.log(res)
+        this.projects = res
+      })
     }
+  },
+  created () {
+    this.getCategories()
+    this.getProjects(1)
   }
 }
 </script>

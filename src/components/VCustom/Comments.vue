@@ -1,26 +1,29 @@
 <template>
   <div>
-      <v-row >
-        <v-col offset-md="1" cols="auto">
+      <v-row v-if="false" >
+        <v-col offset="1" offset-md="1" cols="auto">
             <h4 class="nunito text-uppercase">Комментарии</h4>
             <v-divider></v-divider>
         </v-col>
           <v-col cols="auto" >
            <div class="d-flex align-self-center">
-               <v-icon>mdi-eye</v-icon><span class="px-2"> 2 493</span>
+               <v-icon>mdi-eye</v-icon><span class="px-2"> {{timesSeen}}</span>
            </div>
         </v-col>
       </v-row>
-        <v-row  justify-md="start">
-           <v-col offset-md="1" cols="5"  md="auto">
-            <v-btn color="primary" class="m-2" dark text small><v-icon> mdi-facebook</v-icon> facebook</v-btn>
+        <v-row justify-md="start">
+           <v-col offset-md="1" cols="4" md="auto">
+            <v-btn color="primary" class="m-2" dark text small><v-icon left> mdi-facebook</v-icon> facebook</v-btn>
         </v-col>
-        <v-col cols="5" md="auto" >
-          <v-btn color="pink" class="" dark text small><v-icon> mdi-instagram</v-icon> Instagram</v-btn>
+        <v-col cols="4" md="auto">
+          <v-btn color="pink" class="" dark text small><v-icon left> mdi-instagram</v-icon> Instagram</v-btn>
+        </v-col>
+         <v-col cols="3" md="auto">
+          <v-btn  class="" text small><v-icon left> mdi-eye</v-icon> {{timesSeen}}</v-btn>
         </v-col>
       </v-row>
       <!--Comments list-->
-      <v-row justify="center" justify-md="start">
+      <v-row v-if="false" justify="center" justify-md="start">
             <v-col offset-md="1" cols="12" md="8">
                 <transition-group name="list" tag="p">
                 <v-card shaped outlined tile flat v-for="item in comments" :key="item.content" color="orange lighten-5 px-5 mb-2 list-item">
@@ -30,7 +33,7 @@
                 </transition-group>
             </v-col>
       </v-row>
-       <v-row>
+       <v-row  v-if="false">
           <v-col offset-md="1" cols="12" md="8" align-self="center" >
         <div class="d-flex">
                 <v-avatar size="60"><v-img src="https://pbs.twimg.com/profile_images/1176256865304334336/6hOQS3Ef_400x400.jpg"></v-img></v-avatar>
@@ -51,6 +54,12 @@
 </template>
 <script>
 export default {
+  props: {
+    timesSeen: {
+      type: Number,
+      required: false
+    }
+  },
   data () {
     return {
       sendMsg: '',

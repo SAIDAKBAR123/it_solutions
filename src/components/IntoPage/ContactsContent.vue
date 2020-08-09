@@ -88,8 +88,8 @@
                                             <v-icon v-text="contact.icon"></v-icon>
                                             </v-list-item-avatar>
                                             <v-list-item-content>
-                                                <v-list-item-title v-text="contact.title"></v-list-item-title>
-                                                <v-list-item-subtitle v-text="contact.text"></v-list-item-subtitle>
+                                                <v-list-item-title class="text-capitalize" v-text="contact.title"></v-list-item-title>
+                                                <v-list-item-subtitle  v-text="contact.text"></v-list-item-subtitle>
                                             </v-list-item-content>
                                         </v-list-item>
                                    </v-list>
@@ -124,12 +124,12 @@ export default {
         {
           icon: 'mdi-cellphone-sound',
           title: 'Контактный номер',
-          text: '+99899 xxx-yy-zz'
+          text: '+998909647853'
         },
         {
           icon: 'mdi-email-mark-as-unread',
           title: 'E-mail',
-          text: 'example@gmail.com'
+          text: 'z.davlatov@itsolutions.uz'
         }
       ]
     }

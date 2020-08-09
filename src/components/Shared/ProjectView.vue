@@ -1,10 +1,10 @@
 <template>
-  <v-container >
+  <v-container v-if="dessert.id">
     <v-row justify-md="center">
       <v-col class="mt-3" md="6" cols="12">
         <h3
           class="nunito fs_header_2 text-center"
-        >Интернет-магазин по продаже готовых проектов домов</h3>
+        >{{dessert.title}}</h3>
       </v-col>
     </v-row>
     <v-row class justify-md="center">
@@ -14,7 +14,7 @@
       <v-col md="4" cols="12">
         <v-card tile flat color="transparent" class="text-center">
           <h2 class="nunito fs_18">ITsolutions</h2>
-          <span class="grey--text">24th October, 2020</span>
+          <span class="grey--text">{{dessert.createdAt | moment('Do MMM YYYY')}}</span>
         </v-card>
       </v-col>
       <v-col cols="4">
@@ -38,7 +38,7 @@
     <v-row justify="center" justify-md="center">
       <v-col cols="12" md="12">
         <v-card color="transparent" tile flat>
-          <v-card tile flat color="transparent" class="flex-end d-inline-flex text-center">
+          <v-card v-if="false" tile flat color="transparent" class="flex-end d-inline-flex text-center">
             <v-badge
               v-for="(i, c) in icons"
               :key="c"
@@ -53,7 +53,7 @@
               </v-avatar>
             </v-badge>
           </v-card>
-          <v-card-title class="justify-center">
+          <v-card-title class="justify-center mt-10">
             <div class="circular--portrait hidden-sm-and-down">
               <img class="rd" src="https://cxl.com/wp-content/uploads/2016/03/nate_munger.png" />
             </div>
@@ -61,7 +61,7 @@
           <v-img
             aspect-ratio="2.6"
             style="position: relative;"
-            src="https://cdn.dribbble.com/users/127188/screenshots/6380602/01.jpg"
+            :src="dessert.images[0].url"
           ></v-img>
           <!-- <v-card-text
         class="pt-6"
@@ -96,21 +96,21 @@
           icon="mdi-link-variant"
         >
           Вы можете посетить веб-сайт по адресу:
-          <a class="hpLink" href="http://itsolutions.uz/" target="_blank">itsolutions.uz</a>
+          <a class="hpLink" :href="dessert.url" target="_blank">{{dessert.url}}</a>
         </v-alert>
       </v-col>
       <v-col offset-md="2" cols="12" md="8">
-        <v-card tile flat>
-          <v-card-text class="px-0" :class="$vuetify.breakpoint.xs ? 'nunito-ph': 'nunito-sans'" v-text="essay"></v-card-text>
+        <v-card tile flat >
+          <v-card-text class="px-0" :class="$vuetify.breakpoint.xs ? 'nunito-ph': 'nunito-sans'" v-html="dessert.content"></v-card-text>
         </v-card>
       </v-col>
       <v-col offset-md="2" cols="12" md="8">
-        <viewer :images="images">
+        <viewer :images="dessert.images">
           <img
             width="200"
             class="img_view"
             height="200"
-            v-for="src in images"
+            v-for="src in dessert.images"
             :src="src.url"
             :key="src.url"
           />
@@ -121,21 +121,21 @@
 </template>
 
 <script>
+import Portfolio from '../../services/Portfolio'
 export default {
   data: () => ({
+    dessert: {
+      category: {},
+      categoryId: 1,
+      content: '',
+      createdAt: '',
+      id: '',
+      images: [],
+      title: '',
+      updatedAt: '',
+      url: ''
+    },
     alert: '',
-    images: [
-      {
-        id: 2,
-        url:
-          'https://webthemez.com/wp-content/uploads/2017/07/tycoon-business-website-template.jpg'
-      },
-      {
-        id: 3,
-        url:
-          'https://colorlib.com/wp/wp-content/uploads/sites/2/sportsfit-free-template.jpg'
-      }
-    ],
     icons: [
       {
         icon: 'mdi-instagram',
@@ -151,13 +151,20 @@ export default {
       }
     ],
     tags: ['C++', 'Computer Industry', 'Cisco', 'AI'],
-    essay: `Проектному бюро «Арпланс» из Ярославля нужен интернет-магазин для продажи готовых проектов коттеджей. «Арпланс» сотрудничает со строительными компаниями по всей России, по проектам «Арпланс» построено несколько тысяч частных домов и коттеджей. Проекты «Арпланс» проверены практикой, по отдельным проектам построили десятки домов.
-
-У «Арпланс» под тысячу проектов. В интернет-магазине нужен фильтр проектов. Чтобы по параметрам сузить вариантов до разумного. На сайте нужны отдельные разделы — Клуб строителей и Клуб коттеджных посёлков.
-Главная фишка интернет-магазина «Арпланс» — выгрузка интернет-магазина по API на любой сторонний сайт. Чтобы партнёрам «Арпланс» не нужно было делать свой интернет-магазин и наполнять его контентом. Выгрузка по API позволяет встроить каталог «Арпланс» на любой сайт и продавать проекты как будто это происходит на сайте партнёра. Хотя на самом деле фильтрация, выбор товара и его покупка проходит на сайте «Арпланс», а покупатель видит в окне браузера «мультик». У каждого партнёра «Арпланс» есть личный кабинет на головном сайте, где отображается статистика продаж с сайта партнёра и начисляется агентское вознаграждение.`
+    essay: ''
   }),
+  methods: {
+    getSinglePortfolio () {
+      Portfolio.getSingle(this.$route.params.id).then(res => {
+        this.dessert = res
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  },
   created () {
-    console.log(this.$vuetify.breakpoint)
+    this.getSinglePortfolio()
   }
 }
 </script>

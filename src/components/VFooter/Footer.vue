@@ -71,18 +71,9 @@
                     >Будьте в курсе свежих новостей.</span
                   >
                 </div>
-                <v-text-field
-                  color="orange lighten-3"
-                  class="mt-3 text-box"
-                  clearable
-                  dense
-                  label="example@mail.com"
-                  single-line
-                  outlined
-                ></v-text-field>
-                <v-btn large outlined text color="orange lighten-3"
-                  >Отправить почту</v-btn
-                >
+                <v-btn fab text small color="blue-grey">
+                  <v-icon size="40">mdi-facebook</v-icon>
+                  </v-btn>
               </v-col>
             </v-row>
           </v-card>

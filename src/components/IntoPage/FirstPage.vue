@@ -25,11 +25,11 @@
               <v-btn
                 class="mx-auto text-capitalize"
                 @click="getAboutUs"
-                color="orange lighten-2 text-center"
-                outlined
-                rounded
+                elevation="10"
+                color="transparent"
                 x-large
-                >кто мы ?</v-btn
+                dark
+                >Кто мы ?</v-btn
               >
             </v-col>
           </v-col>

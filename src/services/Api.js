@@ -1,6 +1,5 @@
 /* eslint-disable eqeqeq */
 import axios from 'axios'
-import router from '../router'
 export function execute (promise) {
   return new Promise((resolve, reject) => {
     promise.then(res => resolve(res.data))
@@ -11,8 +10,6 @@ export function execute (promise) {
             if (err.response.status == 404) {
             }
             if (err.response.status == 401) {
-              // store.commit('setTokenExpired', true)
-              router.push('/pages/login')
             }
             reject((err.response))
           }

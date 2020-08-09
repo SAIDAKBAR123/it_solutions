@@ -12,7 +12,12 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import 'viewerjs/dist/viewer.css'
 import Viewer from 'v-viewer'
-
+const moment = require('moment')
+require('moment/locale/ru')
+Vue.use(require('vue-moment'), {
+  moment
+})
+console.log(Vue.moment().locale())
 Vue.use(Viewer)
 AOS.init()
 Vue.component('vue-typer', VueTyper)
